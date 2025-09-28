@@ -155,7 +155,9 @@ nav:
     - 安全建议: faq/security.md
     - 企业版: https://www.jumpserver.org/enterprise.html
   - 开发文档:
-    - API 文档: dev/rest_api.md
+    - API 文档:
+      - 认证:  dev/rest_api.md
+      - 用户:  dev/api/users/users.md
     - 交互命令: dev/shell.md
   - 用户案例: user_stories.md
   - 更新日志: change_log.md
