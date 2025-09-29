@@ -158,6 +158,9 @@ nav:
     - API 文档:
       - 认证:  dev/rest_api.md
       - 用户:  dev/api/users/users.md
+      - 用户组: dev/api/users/usergroups.md
+      - 资产节点 : dev/api/assets/nodes.md
+      - 资产账号: dev/api/assets/accounts.md
     - 交互命令: dev/shell.md
   - 用户案例: user_stories.md
   - 更新日志: change_log.md
