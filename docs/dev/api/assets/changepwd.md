@@ -63,8 +63,6 @@
     | Content-Type    | application/json                        | 输出为json格式                                                       |
 
 
-
-
     !!! tip "请求示例"  
         ```sh  
         curl -X POST 'https://localhost/api/v1/accounts/change-secret-automations/' \  
@@ -95,7 +93,7 @@
             }'  
         ```
 
-    - **返回参数: **
+    - **返回参数:**
 
     | 字段名称         | 数据类型          | 字段描述                 | 备注 |
     |------------------|-------------------|--------------------------|------|
@@ -154,8 +152,8 @@
     | comment          | String     | 备注                                  | 否       | -                                       |
 
     !!! tip "请求示例"
-    ```sh  
-    curl -X PUT 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c' \  
+        ```sh  
+        curl -X PUT 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c' \  
         -H 'Content-Type: application/json' \  
         -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
@@ -181,7 +179,7 @@
             }],  
             "comment": "test"  
         }'  
-    ```
+        ```
 
     - **返回参数:**
 

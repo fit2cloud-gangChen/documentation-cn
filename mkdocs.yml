@@ -165,6 +165,7 @@ nav:
       - 资产授权: dev/api/assets/authorization.md
       - 改密计划: dev/api/assets/changepwd.md
       - 账号备份: dev/api/assets/account_backup.md
+      - 工单: dev/api/ticket/ticket.md
     - 交互命令: dev/shell.md
   - 用户案例: user_stories.md
   - 更新日志: change_log.md

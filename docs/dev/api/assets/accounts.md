@@ -48,21 +48,21 @@
     | is_active      | Boolean  | 激活       |      |
 
     !!! tip "请求示例"  
-         ```sh  
-         curl -X POST 'https://localhost/api/v1/accounts/accounts/' \  
-            -H 'Content-Type:application/json' \  
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
-            -d '{  
-                    "privileged":true,  
-                    "secret_type":"password",  
-                    "push_now":false,  
-                    "is_active":true,  
-                    "name":"root",  
-                    "username":"root",  
-                    "secret":"ThisIsPassword",  
-                    "asset":"09e1e072-1498-42f7-a6b1-567c2db56f59"  
-                }'  
+        ```sh  
+        curl -X POST 'https://localhost/api/v1/accounts/accounts/' \  
+        -H 'Content-Type:application/json' \  
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
+        -d '{  
+                "privileged":true,  
+                "secret_type":"password",  
+                "push_now":false,  
+                "is_active":true,  
+                "name":"root",  
+                "username":"root",  
+                "secret":"ThisIsPassword",  
+                "asset":"09e1e072-1498-42f7-a6b1-567c2db56f59"  
+            }'  
         ```
 === "GET"
     - **描述:**
@@ -82,11 +82,6 @@
             -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
             -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'  
         ```
-
-
-    - **返回参数：**
-        ```
-
 
     - **返回参数：**  
   
@@ -129,9 +124,9 @@
     !!! tip "请求示例"  
         ```sh  
         curl -X DELETE 'https://localhost/api/v1/perms/accounts/accounts/1b56ff93-18e9-478e-97c2-8b6a3720b95d/' \  
-            -H 'Content-Type:application/json' \  
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'  
+        -H 'Content-Type:application/json' \  
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'  
         ```
 
 === "PUT/PATCH"
@@ -164,19 +159,19 @@
     !!! tip "请求示例"  
         ```sh  
         curl -X POST 'https://localhost/api/v1/accounts/accounts/f3280232-113a-4135-a908-eddd1d9f27b6' \  
-            -H 'Content-Type:application/json' \  
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
-            -d '{  
-                    "privileged":true,  
-                    "secret_type":"password",  
-                    "push_now":false,  
-                    "is_active":true,  
-                    "name":"root",  
-                    "username":"root",  
-                    "secret":"ThisIsPassword",  
-                    "asset":"09e1e072-1498-42f7-a6b1-567c2db56f59"  
-                }'  
+        -H 'Content-Type:application/json' \  
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
+        -d '{  
+                "privileged":true,  
+                "secret_type":"password",  
+                "push_now":false,  
+                "is_active":true,  
+                "name":"root",  
+                "username":"root",  
+                "secret":"ThisIsPassword",  
+                "asset":"09e1e072-1498-42f7-a6b1-567c2db56f59"  
+            }'  
         ```
         - **返回参数：**  
 

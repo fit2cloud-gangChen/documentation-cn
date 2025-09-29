@@ -16,11 +16,6 @@
     | X-JMS-ORG | `00000000-0000-0000-0000-000000000002` | 组织 ID，不传则默认归属 `Default` 组织 |
     | Content-Type | `application/json` | 请求/响应体为 JSON 格式 |
 
-    - **请求体参数（Body）：**
-     
-    | 字段名称 | 类型 | 描述 | 备注 |
-    | -------- | ---- | ---- | ---- |
-    | None |  |  |  |
     
     - **返回参数：**
 
@@ -68,8 +63,8 @@
         
         ``` sh
         curl -X GET 'https://localhost/api/v1/users/users/?offset=0&limit=15' \ 
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
         ```
 
 === "POST"
@@ -147,30 +142,30 @@
     !!! tip "请求示例"
         ``` sh
         curl -X POST 'https://localhost/api/v1/users/users/' \ 
-            -H 'Content-Type:application/json' \ 
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \ 
-            -d '{ 
-                    "name":"test_create_user_1", 
-                    "username":"test_create_user_1", 
-                    "password_strategy":"email", 
-                    "email":"test_create_user_1@fit2cloud.com", 
-                    "mfa_level":0, 
-                    "source":"local", 
-                    "date_expired":"2093-02-05T08:28:41.726694Z", 
-                    "system_roles": 
-                    [ 
-                        { 
-                            "pk":"00000000-0000-0000-0000-000000000003" 
-                        } 
-                    ], 
-                    "org_roles": 
-                    [ 
-                        { 
-                            "pk":"00000000-0000-0000-0000-000000000007" 
-                        } 
-                    ] 
-                }'
+        -H 'Content-Type:application/json' \ 
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \ 
+        -d '{ 
+                "name":"test_create_user_1", 
+                "username":"test_create_user_1", 
+                "password_strategy":"email", 
+                "email":"test_create_user_1@fit2cloud.com", 
+                "mfa_level":0, 
+                "source":"local", 
+                "date_expired":"2093-02-05T08:28:41.726694Z", 
+                "system_roles": 
+                [ 
+                    { 
+                        "pk":"00000000-0000-0000-0000-000000000003" 
+                    } 
+                ], 
+                "org_roles": 
+                [ 
+                    { 
+                        "pk":"00000000-0000-0000-0000-000000000007" 
+                    } 
+                ] 
+            }'
         ```
 
 ## **/api/v1/users/users/{id}**
@@ -236,8 +231,8 @@
     !!! tip "请求示例"
         ```sh
         curl -X GET 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+        -H 'Authorization: Bearer <token>' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
         ```
 
 === "PUT"
@@ -321,19 +316,19 @@
     !!! tip "请求示例"
         ```sh
         curl -X PUT 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{
-                "name": "new_name",
-                "username": "new_username",
-                "password_strategy": "email",
-                "email": "user@fit2cloud.com",
-                "mfa_level": 1,
-                "source": "local",
-                "date_expired": "2093-02-05T08:28:41.726694Z",
-                "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
-                "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+        -H 'Content-Type: application/json' \
+        -H 'Authorization: Bearer <token>' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+        -d '{
+            "name": "new_name",
+            "username": "new_username",
+            "password_strategy": "email",
+            "email": "user@fit2cloud.com",
+            "mfa_level": 1,
+            "source": "local",
+            "date_expired": "2093-02-05T08:28:41.726694Z",
+            "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+            "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
             }'
         ```
 
@@ -417,10 +412,10 @@
     !!! tip "请求示例"
         ```sh
         curl -X PATCH 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{ "name": "partial_update_name" }'
+        -H 'Content-Type: application/json' \
+        -H 'Authorization: Bearer <token>' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+        -d '{ "name": "partial_update_name" }'
         ```
 
 === "DELETE"
@@ -446,6 +441,6 @@
     !!! tip "请求示例"
         ```sh
         curl -X DELETE 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+        -H 'Authorization: Bearer <token>' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
         ```
