@@ -66,6 +66,39 @@
         -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
         ```
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN   = "your token"
+            ORG_ID  = "your org id"
+
+            def get_user_info():
+                url = f"{API_URL}/api/v1/users/users/"
+                headers = {
+                    'Authorization': f'Bearer {TOKEN}',
+                    'X-JMS-ORG': ORG_ID
+                }
+
+                try:
+                    response = requests.get(
+                        url, headers = headers
+                    )
+                    response.raise_for_status()
+                    return response.json()
+                except requests.RequestException as e:
+                    print(f"API 请求失败:{e}")
+                    return None
+
+            if __name__ == "__main__":
+                result = get_user_info()
+                print(json.dumps(result, indent = 2, ensure_ascii = False))
+            ```
 
 === "POST"
 
@@ -146,27 +179,66 @@
         -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \ 
         -d '{ 
-                "name":"test_create_user_1", 
-                "username":"test_create_user_1", 
-                "password_strategy":"email", 
-                "email":"test_create_user_1@fit2cloud.com", 
+                "name": "api_test",
+                "username": "api_test",
+                "password": "apitest",
+                "password_strategy":"custom", 
+                "email":"api_test@fit2cloud.com", 
                 "mfa_level":0, 
                 "source":"local", 
-                "date_expired":"2093-02-05T08:28:41.726694Z", 
-                "system_roles": 
-                [ 
-                    { 
-                        "pk":"00000000-0000-0000-0000-000000000003" 
-                    } 
+                "system_roles":[ 
+                    {"pk":"00000000-0000-0000-0000-000000000003"} 
                 ], 
-                "org_roles": 
-                [ 
-                    { 
-                        "pk":"00000000-0000-0000-0000-000000000007" 
-                    } 
+                "org_roles":[ 
+                    {"pk":"00000000-0000-0000-0000-000000000007"} 
                 ] 
             }'
         ```
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN = "your token"
+            ORG_ID = "your org id"
+
+            def create_user():
+                url = f"{API_URL}/api/v1/users/users/"
+                headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {TOKEN}",
+                    "X-JMS-ORG": ORG_ID
+                }
+                data = {
+                    "name": "api_test",
+                    "username": "api_test",
+                    "password": "apitest",
+                    "password_strategy": "custom",
+                    "email": "api_test@fit2cloud.com",
+                    "mfa_level": 0,
+                    "source": "local",
+                    "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+                    "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+                }
+
+                try:
+                    response = requests.post(
+                        url, headers = headers,
+                        data = json.dumps(data)
+                    )
+                    response.raise_for_status()
+                    print("用户创建成功:")
+                    print(json.dumps(response.json(), indent = 2))
+                except Exception as e:
+                    print(f"错误:{e}")
+
+            if __name__ == "__main__":
+                create_user()
+            ```
 
 ## **/api/v1/users/users/{id}**
 
@@ -234,6 +306,40 @@
         -H 'Authorization: Bearer <token>' \
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
         ```
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN   = "your token"
+            ORG_ID  = "your org id"
+            USER_ID = "your user id"
+
+            def get_user_info():
+                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+                headers = {
+                    'Authorization': f'Bearer {TOKEN}',
+                    'X-JMS-ORG': ORG_ID
+                }
+
+                try:
+                    response = requests.get(
+                        url, headers = headers
+                    )
+                    response.raise_for_status()
+                    return response.json()
+                except requests.RequestException as e:
+                    print(f"API 请求失败:{e}")
+                    return None
+
+            if __name__ == "__main__":
+                result = get_user_info()
+                print(json.dumps(result, indent = 2, ensure_ascii = False))
+            ```
 
 === "PUT"
 
@@ -332,6 +438,53 @@
             }'
         ```
 
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+            
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN   = "your token"
+            ORG_ID  = "your org id"
+            USER_ID = "your user id"
+
+            def update_user():
+                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+                headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {TOKEN}",
+                    "X-JMS-ORG": ORG_ID
+                }
+                data = {
+                    "name": "api_test",
+                    "username": "api_test_update",
+                    "password": "apitest",
+                    "password_strategy": "custom",
+                    "email": "api_test@fit2cloud.com",
+                    "mfa_level": 0,
+                    "source": "local",
+                    "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+                    "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+                }
+
+                try:
+                    response = requests.put(
+                        url, headers = headers,
+                        data = json.dumps(data)
+                    )
+                    response.raise_for_status()
+                    print("用户更新成功:")
+                    print(json.dumps(response.json(), indent=2))
+                except Exception as e:
+                    print(f"错误:{e}")
+
+            if __name__ == "__main__":
+                update_user()
+            ```
+
 === "PATCH"
 
     - **描述：**
@@ -418,6 +571,45 @@
         -d '{ "name": "partial_update_name" }'
         ```
 
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+            
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN   = "your token"
+            ORG_ID  = "your org id"
+            USER_ID = "your user id"
+
+            def partial_update_user():
+                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+                headers = {
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {TOKEN}",
+                    "X-JMS-ORG": ORG_ID
+                }
+                data = {
+                    "username": "api_test_update"
+                }
+
+                try:
+                    response = requests.patch(
+                        url, headers = headers,
+                        data = json.dumps(data)
+                    )
+                    response.raise_for_status()
+                    print("用户更新成功:")
+                    print(json.dumps(response.json(), indent = 2))
+                except Exception as e:
+                    print(f"错误:{e}")
+
+            if __name__ == "__main__":
+                partial_update_user()
+            ```
+
 === "DELETE"
 
     - **描述：**
@@ -444,3 +636,37 @@
         -H 'Authorization: Bearer <token>' \
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
         ```
+        === "Python"
+            ```python
+            # Python 示例
+            # pip install requests
+            
+            import requests
+            import json
+
+            API_URL = "https://localhost"
+            TOKEN   = "your token"
+            ORG_ID  = "your org id"
+            USER_ID = "your user id"
+
+            def delete_user():
+                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+                headers = {
+                    'Authorization': f'Bearer {TOKEN}',
+                    'X-JMS-ORG': ORG_ID
+                }
+
+                try:
+                    response = requests.delete(
+                        url, headers = headers
+                    )
+                    response.raise_for_status()
+                    print("用户删除成功:")
+                    print(json.dumps(response.json(), indent=2))
+                except Exception as e:
+                    print(f"API 请求失败:{e}")
+                    return None
+
+            if __name__ == "__main__":
+                delete_user()
+            ```
