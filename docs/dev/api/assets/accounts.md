@@ -51,14 +51,14 @@
         === "CURL"
             ```sh  
             curl -X POST 'https://localhost/api/v1/accounts/accounts/' \
-            -H 'Content-Type:application/json' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{  
-                "username": "root",
-                "secret_type": "password",
-                "asset": "09e1e072-1498-42f7-a6b1-567c2db56f59"
-            }'  
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+                -d '{  
+                    "username": "root",
+                    "secret_type": "password",
+                    "asset": "09e1e072-1498-42f7-a6b1-567c2db56f59"
+                }'  
             ```
 
         === "Python"
@@ -99,8 +99,7 @@
                 try:
                     response = requests.post(
                         url, auth = auth, headers = headers,
-                        data = json.dumps(data),
-                        verify = False
+                        data = json.dumps(data)
                     )
                     response.raise_for_status()
                     print("资产账号创建成功:")
@@ -145,9 +144,9 @@
         === "CURL"
             ```sh
             curl -X GET 'https://localhost/api/v1/accounts/accounts/?node_id=&asset_id=a014d307-7c2b-4788-a3e0aebd01ddf761&has_secret=true&offset=0&limit=15' \
-            -H 'Content-Type:application/json' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
             ```
 
         === "Python"
@@ -187,8 +186,7 @@
                 try:
                     response = requests.get(
                         url, auth = auth, headers = headers,
-                        params = params,
-                        verify = False
+                        params = params
                     )
                     response.raise_for_status()
                     accounts_data = response.json()
@@ -229,9 +227,9 @@
         === "CURL"
             ```sh
             curl -X DELETE 'https://localhost/api/v1/accounts/accounts/44e2c39a-c022-455d-b9b1-889e52e453b7/' \
-            -H 'Content-Type:application/json' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
             ```
         === "Python"
             ```python
@@ -329,14 +327,14 @@
         === "CURL"
             ```sh 
             curl -X PUT 'https://localhost/api/v1/accounts/accounts/f3280232-113a-4135-a908-eddd1d9f27b6/' \
-            -H 'Content-Type:application/json' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{
-                "username": "root_update",
-                "secret_type": "password",
-                "asset": "bf13858e-b43a-45d1-b952-5624869fdbce"
-            }'
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+                -d '{
+                    "username": "root_update",
+                    "secret_type": "password",
+                    "asset": "bf13858e-b43a-45d1-b952-5624869fdbce"
+                }'
             ```
         === "Python"
             ```python
@@ -378,8 +376,7 @@
                 try:
                     response = requests.put(
                         url, auth = auth, headers = headers,
-                        data=json.dumps(data),
-                        verify=False
+                        data=json.dumps(data)
                     )
                     response.raise_for_status()
                     print("账号更新成功:")
@@ -428,9 +425,9 @@
         === "CURL"
             ```sh
             curl -X GET 'https://localhost/api/v1/accounts/account-secrets/1e28b088-c86c-41b7-a85b-29e15c7cc8cb/' \
-            -H 'Content-Type:application/json' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
             ```
 
         === "Python"
@@ -465,8 +462,7 @@
                 
                 try:
                     response = requests.get(
-                        url, auth = auth, headers = headers,
-                        verify = False
+                        url, auth = auth, headers = headers
                     )
                     response.raise_for_status()
                     accounts_data = response.json()

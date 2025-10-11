@@ -64,8 +64,8 @@
         === "CURL"
             ``` sh
             curl -X GET 'https://localhost/api/v1/users/users/?offset=0&limit=15' \ 
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
             ```
 
         === "Python"
@@ -188,24 +188,24 @@
         === "CURL"
             ``` sh
             curl -X POST 'https://localhost/api/v1/users/users/' \ 
-            -H 'Content-Type:application/json' \ 
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \ 
-            -d '{ 
-                    "name": "api_test",
-                    "username": "api_test",
-                    "password": "apitest",
-                    "password_strategy":"custom", 
-                    "email":"api_test@fit2cloud.com", 
-                    "mfa_level":0, 
-                    "source":"local", 
-                    "system_roles":[ 
-                        {"pk":"00000000-0000-0000-0000-000000000003"} 
-                    ], 
-                    "org_roles":[ 
-                        {"pk":"00000000-0000-0000-0000-000000000007"} 
-                    ] 
-                }'
+                -H 'Content-Type:application/json' \ 
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \ 
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \ 
+                -d '{ 
+                        "name": "api_test",
+                        "username": "api_test",
+                        "password": "apitest",
+                        "password_strategy":"custom", 
+                        "email":"api_test@fit2cloud.com", 
+                        "mfa_level":0, 
+                        "source":"local", 
+                        "system_roles":[ 
+                            {"pk":"00000000-0000-0000-0000-000000000003"} 
+                        ], 
+                        "org_roles":[ 
+                            {"pk":"00000000-0000-0000-0000-000000000007"} 
+                        ] 
+                    }'
             ```
         === "Python"
             ```python
@@ -326,8 +326,8 @@
         === "CURL"
             ```sh
             curl -X GET 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+                -H 'Authorization: Bearer <token>' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
             ```
 
         === "Python"
@@ -458,20 +458,20 @@
         === "CURL"
             ```sh
             curl -X PUT 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{
-                "name": "new_name",
-                "username": "new_username",
-                "password_strategy": "email",
-                "email": "user@fit2cloud.com",
-                "mfa_level": 1,
-                "source": "local",
-                "date_expired": "2093-02-05T08:28:41.726694Z",
-                "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
-                "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
-                }'
+                -H 'Content-Type: application/json' \
+                -H 'Authorization: Bearer <token>' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+                -d '{
+                    "name": "new_name",
+                    "username": "new_username",
+                    "password_strategy": "email",
+                    "email": "user@fit2cloud.com",
+                    "mfa_level": 1,
+                    "source": "local",
+                    "date_expired": "2093-02-05T08:28:41.726694Z",
+                    "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+                    "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+                    }'
             ```
 
         === "Python"
@@ -618,10 +618,10 @@
         === "CURL"
             ```sh
             curl -X PATCH 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{ "name": "partial_update_name" }'
+                -H 'Content-Type: application/json' \
+                -H 'Authorization: Bearer <token>' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+                -d '{ "name": "partial_update_name" }'
             ```
 
         === "Python"
@@ -698,8 +698,8 @@
         === "CURL"
             ```sh
             curl -X DELETE 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+                -H 'Authorization: Bearer <token>' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
             ```
         === "Python"
             ```python

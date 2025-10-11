@@ -28,23 +28,81 @@
 | date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
 | comment      | String              | 备注                                                                 | 否       | -            |
 
-!!! tip "请求示例"  
-    ```sh  
-    curl -X POST 'https://localhost/api/v1/perms/asset-permissions/' \  
-        -H 'Content-Type:application/json' \  
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
-        -d '{  
-                "name":"create_asset_permission",  
-                "user_groups":[{"pk":"745980b1-54be-4c5e-b6ab-89826c2e2054"}],  
-                "nodes":["3728f004-99a2-4fca-9577-84d5ffcf9eff"],  
-                "accounts":["@ALL"],  
-                "actions":["connect","upload","download","copy","paste"],  
-                "is_active":true,  
-                "date_start":"2023-02-23T10:53:23.879Z",  
-                "date_expired":"2123-01-30T10:53:23.879Z"  
-            }'  
-    ```
+!!! tip "请求示例"
+
+    === "CURL"
+        ```sh
+        curl -X POST 'https://localhost/api/v1/perms/asset-permissions/' \
+        -H 'Content-Type:application/json' \
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+        -d '{
+                "name":"create_asset_permission",
+                "user_groups":[{"pk":"745980b1-54be-4c5e-b6ab-89826c2e2054"}],
+                "nodes":["3728f004-99a2-4fca-9577-84d5ffcf9eff"],
+                "accounts":["@ALL"],
+                "actions":["connect","upload","download","copy","paste"],
+                "is_active":true,
+                "date_start":"2025-01-01T00:00:00.879Z",
+                "date_expired":"2095-01-01T00:00:00.879Z"
+            }'
+        ```
+
+    === "Python"
+        ```python
+        # Python 示例
+
+        import requests
+        import json
+        from datetime import datetime
+        from httpsig.requests_auth import HTTPSignatureAuth
+
+        API_URL     = "https://localhost"
+        KEY_ID      = "your id"
+        KEY_SECRET  = "your secret"
+        ORG_ID      = "your org id"
+        GROUP_ID    = "your group id"
+        NODE_ID     = "your node id"
+
+        def create_asset_permissions():
+            url = f"{API_URL}/api/v1/perms/asset-permissions/"
+            gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+            signature_headers = ['(request-target)', 'accept', 'date']
+            headers = {
+                "Content-Type": "application/json",
+                "X-JMS-ORG": ORG_ID,
+                "Date": datetime.utcnow().strftime(gmt_form)
+            }
+            auth = HTTPSignatureAuth(
+                key_id = KEY_ID, secret = KEY_SECRET,
+                algorithm = "hmac-sha256",
+                headers = signature_headers
+            )
+            data = {
+                "name":"create_asset_permission",
+                "user_groups":[{"pk": GROUP_ID}],
+                "nodes":[NODE_ID],
+                "accounts":["@ALL"],
+                "actions":["connect","upload","download","copy","paste"],
+                "is_active": True,
+                "date_start":"2025-01-01T00:00:00.879Z",
+                "date_expired":"2095-01-01T00:00:00.879Z"
+            }
+
+            try:
+                response = requests.post(
+                    url, auth = auth, headers = headers,
+                    data = json.dumps(data)
+                )
+                response.raise_for_status()
+                print("资产授权创建成功:")
+                print(json.dumps(response.json(), indent = 2))
+            except Exception as e:
+                print(f"错误:{e}")
+
+        if __name__ == "__main__":
+            delete_assets_hosts()
+        ```
 
 - **返回参数：**  
 
@@ -86,14 +144,57 @@
     | ---- | ------ | ---------- | ---- |
     | id   | String | 授权ID     | 是   |
 
-    !!! tip "请求示例"  
-        ```sh  
-        curl -X DELETE 'https://localhost/api/v1/perms/asset-permissions/b2c45ce6-6b9c-4270-a073-567ff0e0ade8/' \  
-            -H 'Content-Type:application/json' \  
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'  
-        ```
+    !!! tip "请求示例"
 
+        === "CURL"
+            ```sh
+            curl -X DELETE 'https://localhost/api/v1/perms/asset-permissions/b2c45ce6-6b9c-4270-a073-567ff0e0ade8/' \
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
+            ```
+        === "Python"
+            ```python
+            # Python 示例
+
+            import requests
+            import json
+            from datetime import datetime
+            from httpsig.requests_auth import HTTPSignatureAuth
+
+            API_URL     = "https://localhost"
+            KEY_ID      = "your id"
+            KEY_SECRET  = "your secret"
+            ORG_ID      = "your org id"
+            PER_ID      = "your permission id"
+
+            def delete_assets_permissions():
+                url = f"{API_URL}/api/v1/perms/asset-permissions/{PER_ID}/"
+                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+                signature_headers = ['(request-target)', 'accept', 'date']
+                headers = {
+                    "Content-Type": "application/json",
+                    "X-JMS-ORG": ORG_ID,
+                    "Date": datetime.utcnow().strftime(gmt_form)
+                }
+                auth = HTTPSignatureAuth(
+                    key_id = KEY_ID, secret = KEY_SECRET,
+                    algorithm = "hmac-sha256",
+                    headers = signature_headers
+                )
+
+                try:
+                    response = requests.delete(
+                        url, auth = auth, headers = headers
+                    )
+                    response.raise_for_status()
+                    print("资产授权删除成功")
+                except Exception as e:
+                    print(f"错误:{e}")
+
+            if __name__ == "__main__":
+                delete_assets_permissions()
+            ```
 
 === "PUT"
     - **描述：**
@@ -123,23 +224,82 @@
     | date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
     | comment      | String              | 备注                                                                 | 否       | -            |
 
-    !!! tip "请求示例"  
-        ```sh  
-        curl -X PUT 'https://localhost/api/v1/perms/asset-permissions/ca90421b-bc45-48c0-bd49-4a213ff61b7c/' \  
-            -H 'Content-Type:application/json' \  
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \  
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \  
-            -d '{  
-                    "name":"create_asset_permission",  
-                    "user_groups":[{"pk":"745980b1-54be-4c5e-b6ab-89826c2e2054"}], 
-                    "nodes":["3728f004-99a2-4fca-9577-84d5ffcf9eff"], 
-                    "accounts":["@ALL"], 
-                    "actions":["connect","upload","download","copy","paste"], 
-                    "is_active":true, 
-                    "date_start":"2023-02-23T10:53:23.879Z", 
-                    "date_expired":"2123-01-30T10:53:23.879Z" 
-                }'
-        ```
+    !!! tip "请求示例"
+
+        === "CURL"
+            ```sh
+            curl -X PUT 'https://localhost/api/v1/perms/asset-permissions/ca90421b-bc45-48c0-bd49-4a213ff61b7c/' \
+                -H 'Content-Type:application/json' \
+                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+                -d '{
+                        "name":"create_asset_permission_update",
+                        "user_groups":[{"pk":"745980b1-54be-4c5e-b6ab-89826c2e2054"}],
+                        "nodes":["3728f004-99a2-4fca-9577-84d5ffcf9eff"],
+                        "accounts":["@ALL"],
+                        "actions":["connect","upload","download","copy","paste"],
+                        "is_active":true,
+                        "date_start":"2025-01-01T00:00:00.879Z",
+                        "date_expired":"2095-01-01T00:00:00.879Z"
+                    }'
+            ```
+        
+        === "Python"
+            ```python
+            # Python 示例
+
+            import requests
+            import json
+            from datetime import datetime
+            from httpsig.requests_auth import HTTPSignatureAuth
+
+            API_URL     = "https://localhost"
+            KEY_ID      = "your id"
+            KEY_SECRET  = "your secret"
+            ORG_ID      = "your org id"
+            GROUP_ID    = "your group id"
+            NODE_ID     = "your node id"
+            PER_ID      = "your permission id"
+
+            def update_asset_permissions():
+                url = f"{API_URL}/api/v1/perms/asset-permissions/{PER_ID}/"
+                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+                signature_headers = ['(request-target)', 'accept', 'date']
+                headers = {
+                    "Content-Type": "application/json",
+                    "X-JMS-ORG": ORG_ID,
+                    "Date": datetime.utcnow().strftime(gmt_form)
+                }
+                auth = HTTPSignatureAuth(
+                    key_id = KEY_ID, secret = KEY_SECRET,
+                    algorithm = "hmac-sha256",
+                    headers = signature_headers
+                )
+                data = {
+                    "name":"create_asset_permission_update",
+                    "user_groups":[{"pk": GROUP_ID}],
+                    "nodes":[NODE_ID],
+                    "accounts":["@ALL"],
+                    "actions":["connect","upload","download","copy","paste"],
+                    "is_active": True,
+                    "date_start":"2025-01-01T00:00:00.879Z",
+                    "date_expired":"2095-01-01T00:00:00.879Z"
+                }
+
+                try:
+                    response = requests.put(
+                        url, auth = auth, headers = headers,
+                        data = json.dumps(data)
+                    )
+                    response.raise_for_status()
+                    print("资产授权更新成功:")
+                    print(json.dumps(response.json(), indent = 2))
+                except Exception as e:
+                    print(f"错误:{e}")
+
+            if __name__ == "__main__":
+                update_asset_permissions()
+            ```
         
     - **返回参数：**
 
