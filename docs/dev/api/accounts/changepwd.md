@@ -240,23 +240,24 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：** 
 
-| 参数名 | 类型 | 描述 | 是否必选 | 默认值 |
-|--------|------|------|----------|--------|
-| id | String | 改密计划ID | 是 | - |
-| name | String | 名称 | 是 | - |
-| accounts | String[] | 资产账户名 | 是 | - |
-| assets | String[] | 资产ID | 否 | - |
-| nodes | string[] | 资产节点ID | 否 | - |
-| is_active | Boolean | 是否激活 | 是 | - |
-| is_periodic | Boolean | 是否定期执行 | 是 | - |
-| crontab | String | 定期执行crontab表达式 | 否 | is_periodic=true时填写 |
-| interval | String | 周期执行 | 否 | is_periodic=true时填写，默认24 |
-| secret_strategy | String | 密文生成策略 | 是 | 默认: 指定specific；随机：random |
-| secret_type | String | 密文类型 | 是 | 默认：password；可选值：ssh_key |
-| password_rules | int | 随机密码长度 | 否 | 默认30；secret_strategy=random且secret_type=password时必填 |
-| secret | String | 密码 | 否 | secret_strateg=specific且secret_type=password时必填 |
-| comment | String | 备注 | 否 | - |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------- | ------ | ------ | -------- |
+| id* | String | 改密计划ID | - |
+| name* | String | 名称 | - |
+| accounts* | String[] | 资产账户名 | - |
+| assets | String[] | 资产ID | - |
+| nodes | string[] | 资产节点ID | - |
+| is_active* | Boolean | 是否激活 | - |
+| is_periodic* | Boolean | 是否定期执行 | - |
+| crontab | String | 定期执行crontab表达式 | is_periodic=true时填写 |
+| interval | String | 周期执行 | is_periodic=true时填写，默认24 |
+| secret_strategy* | String | 密文生成策略 | 默认: 指定specific；随机：random |
+| secret_type* | String | 密文类型 | 默认：password；可选值：ssh_key |
+| password_rules | int | 随机密码长度 | 默认30；secret_strategy=random且secret_type=password时必填 |
+| secret | String | 密码 | secret_strateg=specific且secret_type=password时必填 |
+| comment | String | 备注 | - |
 
+> 注：带 * 的参数为必填项。
 **请求示例**
 
 **CURL**
@@ -380,10 +381,11 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型 | 描述 | 是否必选 | 默认值 |
-|--------|------|------|----------|--------|
-| id | String | 改密计划ID | 是 | - |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------- | ------ | ------ | -------- |
+| id* | String | 改密计划ID | - |
 
+> 注：带 * 的参数为必填项。
 **请求示例**
 
 **CURL**
@@ -453,11 +455,12 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型 | 描述 | 是否必选 | 默认值 |
-|--------|------|------|----------|--------|
-| automation | String | 改密计划ID | 是 | - |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------- | ------ | ------ | -------- |
+| automation* | String | 改密计划ID | - |
 
 
+> 注：带 * 的参数为必填项。
 **请求示例**
 
 **CURL**

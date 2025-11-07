@@ -1,4 +1,4 @@
-## **/api/v1/users/users/**
+## /api/v1/users/users/
 
 ### GET
 
@@ -124,24 +124,25 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**
 
-| 参数名               | 类型             | 描述                     | 是否必选 | 可选值 / 备注 |
-|----------------------|------------------|--------------------------|----------|---------------|
-| name                 | string           | 名称 / 显示名称          | 是       | -             |
-| username             | string           | 用户名（登录名）         | 是       | -             |
-| email                | string           | 邮箱                     | 是       | -             |
-| wechat               | string           | 微信                     | 否       | -             |
-| phone                | string           | 手机                     | 否       | -             |
-| groups               | string[]         | 用户组 ID 列表           | 否       | -             |
-| password             | string           | 密码（当 password_strategy=custom 时必填） | 是 | - |
-| need_update_password | boolean          | 是否下次登录需修改密码   | 否       | 默认 false；[true,false] |
-| public_key           | string           | SSH 公钥                 | 否       | -             |
-| system_roles         | object[]/string[]| 系统角色                 | 是       | 元素含 pk ID  |
-| org_roles            | object[]/string[]| 组织角色                 | 是       | 元素含 pk ID  |
-| password_strategy    | string           | 密码策略                 | 否       | email / custom；email=邮件设置密码 |
-| source               | string           | 用户来源                 | 否       | 默认 default；local/ldap/openid/radius/cas/saml2/oauth2/custom |
-| mfa_level            | integer          | MFA 等级                 | 否       | 0=禁用 1=启用 2=强制 |
-| date_expired         | string(date-time)| 用户失效时间             | 否       | 例如：2023-02-04T00:54:39.000Z |
+| 参数名 | 类型 | 描述 | 可选值 / 备注 |
+| ---------------------- | ------------------ | -------------------------- | --------------- |
+| name* | string | 名称 / 显示名称 | - |
+| username* | string | 用户名（登录名） | - |
+| email* | string | 邮箱 | - |
+| wechat | string | 微信 | - |
+| phone | string | 手机 | - |
+| groups | string[] | 用户组 ID 列表 | - |
+| password* | string | 密码（当 password_strategy=custom 时必填） | - |
+| need_update_password | boolean | 是否下次登录需修改密码 | 默认 false；[true,false] |
+| public_key | string | SSH 公钥 | - |
+| system_roles* | object[]/string[] | 系统角色 | 元素含 pk ID |
+| org_roles* | object[]/string[] | 组织角色 | 元素含 pk ID |
+| password_strategy | string | 密码策略 | email / custom；email=邮件设置密码 |
+| source | string | 用户来源 | 默认 default；local/ldap/openid/radius/cas/saml2/oauth2/custom |
+| mfa_level | integer | MFA 等级 | 0=禁用 1=启用 2=强制 |
+| date_expired | string(date-time) | 用户失效时间 | 例如：2023-02-04T00:54:39.000Z |
 
+> 注：带 * 的参数为必填项。
 - **返回参数：** （创建成功返回完整用户对象，与 GET 列表中单个元素结构一致）
 
 | 字段名称 | 类型 | 描述 | 备注 |
@@ -263,7 +264,7 @@ if __name__ == "__main__":
     create_user()
 ```
 
-## **/api/v1/users/users/{id}**
+## /api/v1/users/users/{id}/
 
 ### GET
 
@@ -398,24 +399,25 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**
 
-| 参数名 | 类型 | 描述 | 是否必选 | 可选值 / 备注 |
-|-------|------|------|----------|---------------|
-| name | string | 名称 / 显示名称 | 是 | - |
-| username | string | 用户名（登录名） | 是 | - |
-| email | string | 邮箱 | 是 | - |
-| wechat | string | 微信 | 否 | - |
-| phone | string | 手机 | 否 | - |
-| groups | string[] | 用户组 ID 列表 | 否 | - |
-| password | string | 密码 | 条件必填 | password_strategy=custom 时必填 |
-| need_update_password | boolean | 下次登录需改密 | 否 | 默认 false |
-| public_key | string | SSH 公钥 | 否 | - |
-| system_roles | object[]/string[] | 系统角色 | 是 | 元素含 pk |
-| org_roles | object[]/string[] | 组织角色 | 是 | 元素含 pk |
-| password_strategy | string | 密码策略 | 否 | email / custom |
-| source | string | 用户来源 | 否 | default/local/ldap/... |
-| mfa_level | integer | MFA 等级 | 否 | 0=禁用 1=启用 2=强制 |
-| date_expired | string(date-time) | 用户失效时间 | 否 | 2023-02-04T00:54:39.000Z |
+| 参数名 | 类型 | 描述 | 可选值 / 备注 |
+| ------- | ------ | ------ | --------------- |
+| name* | string | 名称 / 显示名称 | - |
+| username* | string | 用户名（登录名） | - |
+| email* | string | 邮箱 | - |
+| wechat | string | 微信 | - |
+| phone | string | 手机 | - |
+| groups | string[] | 用户组 ID 列表 | - |
+| password | string | 密码 | password_strategy=custom 时必填 |
+| need_update_password | boolean | 下次登录需改密 | 默认 false |
+| public_key | string | SSH 公钥 | - |
+| system_roles* | object[]/string[] | 系统角色 | 元素含 pk |
+| org_roles* | object[]/string[] | 组织角色 | 元素含 pk |
+| password_strategy | string | 密码策略 | email / custom |
+| source | string | 用户来源 | default/local/ldap/... |
+| mfa_level | integer | MFA 等级 | 0=禁用 1=启用 2=强制 |
+| date_expired | string(date-time) | 用户失效时间 | 2023-02-04T00:54:39.000Z |
 
+> 注：带 * 的参数为必填项。
 - **返回参数：**
 
 | 字段名称 | 类型 | 描述 | 备注 |

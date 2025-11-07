@@ -14,18 +14,19 @@
 
 - **请求体参数（Body）：**  
 
-| 参数名     | 类型       | 描述                                                                 | 是否必选 | 默认值  |
-|------------|------------|----------------------------------------------------------------------|----------|---------|
-| name       | String     | 名称                                                                 | 是       | -       |
-| addrs      | String     | IP地址                                                               | 是       | -       |
-| platform   | String     | 系统平台，示例值：1（代表Linux）、5（代表Windows）                    | 是       | -       |
-| nodes      | String[]   | 节点                                                                 | 是       | -       |
-| protocols  | String[]   | 协议/端口，参数格式示例：`{"name": "ssh", "port": 22}`                | 否       | -       |
-| labels     | String[]   | 标签                                                                 | 否       | -       |
-| is_active  | Boolean    | 激活状态                                                             | 否       | true    |
-| accounts   | String[]   | 账号信息                                                             | 否       | -       |
+| 参数名 | 类型 | 描述 | 默认值 |
+| ------------ | ------------ | ---------------------------------------------------------------------- | --------- |
+| name* | String | 名称 | - |
+| addrs* | String | IP地址 | - |
+| platform* | String | 系统平台，示例值：1（代表Linux）、5（代表Windows） | - |
+| nodes* | String[] | 节点 | - |
+| protocols | String[] | 协议/端口，参数格式示例：`{"name": "ssh", "port": 22}` | - |
+| labels | String[] | 标签 | - |
+| is_active | Boolean | 激活状态 | true |
+| accounts | String[] | 账号信息 | - |
 
 
+> 注：带 * 的参数为必填项。
 - **返回参数：**
 
 | 字段名称       | 数据类型          | 字段描述       | 备注 |

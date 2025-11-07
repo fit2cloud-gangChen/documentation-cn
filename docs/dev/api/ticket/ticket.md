@@ -14,19 +14,20 @@
 
 - **请求体参数（Body）：**  
 
-| 参数名           | 类型                | 描述                                                                 | 是否必选 | 默认值                                                                 |
-|------------------|---------------------|----------------------------------------------------------------------|----------|------------------------------------------------------------------------|
-| title            | String              | 工单标题                                                             | 是       | -                                                                      |
-| org_id           | String              | 组织                                                                 | 是       | -                                                                      |
-| apply_node       | String              | 申请节点id                                                           | 否       | 支持模糊搜索，最多显示10项                                             |
-| apply_assets     | string[]            | 申请资产id                                                           | 否       | 支持模糊搜索，最多显示10项                                             |
-| apply_accounts   | String[]            | 申请账号id                                                           | 否       | "@ALL"：所有账号；"@SPEC"：指定账号；"@INPUT"：手动账号；"@USER"：同名账号 |
-| apply_actions    | Integer             | 动作                                                                 | 是       | 默认：all；可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] |
-| is_active        | Boolean             | 激活中                                                               | 否       | true                                                                   |
-| apply_date_start | String(datetime)    | 开始日期                                                             | 是       | -                                                                      |
-| apply_date_expired| String(datetime)   | 失效日期（原文“失效日志”应为笔误）                                   | 是       | -                                                                      |
-| comment          | String              | 备注                                                                 | 否       | -                                                                      |
+| 参数名 | 类型 | 描述 | 默认值 |
+| ------------------ | --------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| title* | String | 工单标题 | - |
+| org_id* | String | 组织 | - |
+| apply_node | String | 申请节点id | 支持模糊搜索，最多显示10项 |
+| apply_assets | string[] | 申请资产id | 支持模糊搜索，最多显示10项 |
+| apply_accounts | String[] | 申请账号id | "@ALL"：所有账号；"@SPEC"：指定账号；"@INPUT"：手动账号；"@USER"：同名账号 |
+| apply_actions* | Integer | 动作 | 默认：all；可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] |
+| is_active | Boolean | 激活中 | true |
+| apply_date_start* | String(datetime) | 开始日期 | - |
+| apply_date_expired* | String(datetime) | 失效日期（原文“失效日志”应为笔误） | - |
+| comment | String | 备注 | - |
 
+> 注：带 * 的参数为必填项。
 - **返回参数:**
 
 | 字段名称               | 数据类型          | 字段描述               | 备注 |
@@ -135,14 +136,14 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名   | 类型   | 描述                                                                 | 是否必选 | 默认值 |
-|----------|--------|----------------------------------------------------------------------|----------|--------|
-| state    | String | 动作                                                                 | 否       | -      |
-|          |        | 可选值：pending（待处理）、approved（已同意）、rejected（已拒绝）    |          |        |
-| status   | String | 状态                                                                 | 否       | -      |
-|          |        | 可选值：closed（已关闭、拒绝）、open（打开）                          |          |        |
-| type     | String | 类型                                                                 | 否       | -      |
-|          |        | 可选值：apply_asset（申请资产）、login_confirm（用户登录复核）、command_confirm（命令复核）、login_asset_confirm（资产登录复核） |          |        |
+| 参数名 | 类型 | 描述 | 默认值 |
+| ---------- | -------- | ---------------------------------------------------------------------- | -------- |
+| state | String | 动作 | - |
+|  |  | 可选值：pending（待处理）、approved（已同意）、rejected（已拒绝） |  |
+| status | String | 状态 | - |
+|  |  | 可选值：closed（已关闭、拒绝）、open（打开） |  |
+| type | String | 类型 | - |
+|  |  | 可选值：apply_asset（申请资产）、login_confirm（用户登录复核）、command_confirm（命令复核）、login_asset_confirm（资产登录复核） |  |
 
 - **返回参数：**
 
@@ -242,17 +243,18 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名           | 类型                | 描述                                                                 | 是否必选 | 默认值                                                                 |
-|------------------|---------------------|----------------------------------------------------------------------|----------|------------------------------------------------------------------------|
-| org_id           | String              | 组织id                                                               | 是       | -                                                                      |
-| apply_node       | String              | 申请节点id                                                           | 是       | -                                                                      |
-| apply_assets     | string[]            | 申请资产id                                                           | 是       | -                                                                      |
-| apply_accounts   | String[]            | 申请账号id                                                           | 是       | "@ALL"：所有账号；"@SPEC"：指定账号；"@INPUT"：手动账号；"@USER"：同名账号 |
-| apply_actions    | Integer             | 动作                                                                 | 是       | 默认：all；可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] |
-| apply_date_start | String(datetime)    | 开始日期（原文格式“String(date time)”修正为标准datetime格式表述）     | 是       | -                                                                      |
-| apply_date_expired| String(datetime)   | 失效日期（原文“失效日志”应为笔误，格式“String(date time)”修正为标准datetime格式表述） | 是       | -                                                                      |
-| comment          | String              | 备注                                                                 | 否       | -                                                                      |
+| 参数名 | 类型 | 描述 | 默认值 |
+| ------------------ | --------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| org_id* | String | 组织id | - |
+| apply_node* | String | 申请节点id | - |
+| apply_assets* | string[] | 申请资产id | - |
+| apply_accounts* | String[] | 申请账号id | "@ALL"：所有账号；"@SPEC"：指定账号；"@INPUT"：手动账号；"@USER"：同名账号 |
+| apply_actions* | Integer | 动作 | 默认：all；可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] |
+| apply_date_start* | String(datetime) | 开始日期（原文格式“String(date time)”修正为标准datetime格式表述） | - |
+| apply_date_expired* | String(datetime) | 失效日期（原文“失效日志”应为笔误，格式“String(date time)”修正为标准datetime格式表述） | - |
+| comment | String | 备注 | - |
 
+> 注：带 * 的参数为必填项。
 - **请求示例**
 
 **CURL**
@@ -341,11 +343,12 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型   | 描述           | 是否必选 | 默认值 |
-|--------|--------|----------------|----------|--------|
-| limit  | int    | 每一页显示条数 | 是       | -      |
-| offset | int    | 分页偏移量     | 是       | -      |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------- | -------- | ---------------- | -------- |
+| limit* | int | 每一页显示条数 | - |
+| offset* | int | 分页偏移量 | - |
 
+> 注：带 * 的参数为必填项。
 - **请求示例**
 
 **CURL**
@@ -436,15 +439,16 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名           | 类型   | 描述       | 是否必选 | 默认值 |
-|------------------|--------|------------|----------|--------|
-| type             | string | 类型       | 是       | -      |
-| approval_level   | int    | 审批级别   | 是       | -      |
-| rules            | Array  | 审批流程   | 是       | -      |
-| level            | int    | 流程级别   | 是       | -      |
-| strategy         | object | 审批角色   | 是       | -      |
-| assignees_display | Array  | 审批人名称 | 否       | -      |
+| 参数名 | 类型 | 描述 | 默认值 |
+| ------------------ | -------- | ------------ | -------- |
+| type* | string | 类型 | - |
+| approval_level* | int | 审批级别 | - |
+| rules* | Array | 审批流程 | - |
+| level* | int | 流程级别 | - |
+| strategy* | object | 审批角色 | - |
+| assignees_display | Array | 审批人名称 | - |
 
+> 注：带 * 的参数为必填项。
 **请求示例**
 
 **CURL**

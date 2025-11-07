@@ -14,20 +14,21 @@
 
 - **请求体参数（Body）：**  
 
-| 参数名       | 类型                | 描述                                                                 | 是否必选 | 默认值       |
-|--------------|---------------------|----------------------------------------------------------------------|----------|--------------|
-| name         | String              | 名称                                                                 | 是       | -            |
-| users        | String[]            | 用户id                                                               | 否       | -            |
-| user_groups  | String[]            | 用户组id                                                             | 否       | -            |
-| assets       | String[]            | 资产id（原文“资id”修正为“资产id”，确保语义完整）                     | 否       | -            |
-| nodes        | String[]            | 节点id                                                               | 否       | -            |
-| accounts     | String[]            | 账号id，可选特殊值：<br>- "@ALL"：所有账号<br>- "@SPEC"：指定账号<br>- "@INPUT"：手动账号<br>- "@USER"：同名账号 | 否       | -            |
-| actions      | String[]            | 动作，可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] | 是       | all          |
-| is_active    | Boolean             | 激活中                                                               | 否       | true         |
-| date_start   | String(datetime)    | 开始时间                                                             | 否       | -            |
-| date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
-| comment      | String              | 备注                                                                 | 否       | -            |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------------- | --------------------- | ---------------------------------------------------------------------- | -------------- |
+| name* | String | 名称 | - |
+| users | String[] | 用户id | - |
+| user_groups | String[] | 用户组id | - |
+| assets | String[] | 资产id（原文“资id”修正为“资产id”，确保语义完整） | - |
+| nodes | String[] | 节点id | - |
+| accounts | String[] | 账号id，可选特殊值：<br>- "@ALL"：所有账号<br>- "@SPEC"：指定账号<br>- "@INPUT"：手动账号<br>- "@USER"：同名账号 | - |
+| actions* | String[] | 动作，可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] | all |
+| is_active | Boolean | 激活中 | true |
+| date_start | String(datetime) | 开始时间 | - |
+| date_expired | String(datetime) | 失效时间 | - |
+| comment | String | 备注 | - |
 
+> 注：带 * 的参数为必填项。
 - **请求示例**
 
 **CURL**
@@ -210,20 +211,21 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名       | 类型                | 描述                                                                 | 是否必选 | 默认值       |
-|--------------|---------------------|----------------------------------------------------------------------|----------|--------------|
-| name         | String              | 名称                                                                 | 是       | -            |
-| users        | String[]            | 用户id                                                               | 否       | -            |
-| user_groups  | String[]            | 用户组id                                                             | 否       | -            |
-| assets       | String[]            | 资产id                                                               | 否       | -            |
-| nodes        | String[]            | 节点id                                                               | 否       | -            |
-| accounts     | String[]            | 账号，可选特殊值：<br>- "@ALL"：所有账号<br>- "@SPEC"：指定账号<br>- "@INPUT"：手动账号<br>- "@USER"：同名账号 | 否       | -            |
-| actions      | String[]            | 动作，可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] | 是       | all          |
-| is_active    | Boolean             | 激活中                                                               | 否       | true         |
-| date_start   | String(datetime)    | 开始时间                                                             | 否       | -            |
-| date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
-| comment      | String              | 备注                                                                 | 否       | -            |
+| 参数名 | 类型 | 描述 | 默认值 |
+| -------------- | --------------------- | ---------------------------------------------------------------------- | -------------- |
+| name* | String | 名称 | - |
+| users | String[] | 用户id | - |
+| user_groups | String[] | 用户组id | - |
+| assets | String[] | 资产id | - |
+| nodes | String[] | 节点id | - |
+| accounts | String[] | 账号，可选特殊值：<br>- "@ALL"：所有账号<br>- "@SPEC"：指定账号<br>- "@INPUT"：手动账号<br>- "@USER"：同名账号 | - |
+| actions* | String[] | 动作，可选值：[all, connect, upload_file, download_file, updownload, clipboard_copy, clipboard_paste, clipboard_copy_paste] | all |
+| is_active | Boolean | 激活中 | true |
+| date_start | String(datetime) | 开始时间 | - |
+| date_expired | String(datetime) | 失效时间 | - |
+| comment | String | 备注 | - |
 
+> 注：带 * 的参数为必填项。
 - **请求示例**
 
 **CURL**
