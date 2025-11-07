@@ -37,32 +37,31 @@ theme:
     repo: fontawesome/brands/github
 
 nav:
-  - API 文档:
-    - 免责声明: dev/api/disclaimer.md
-    - 前言: dev/api/prologue_api.md
-    - 认证方式:
-      - 概述: dev/api/auth/auth.md
-      - Session: dev/api/auth/session.md
-      - Token: dev/api/auth/token.md
-      - Private Token: dev/api/auth/private_token.md
-      - Access Key: dev/api/auth/access_key.md
-    - users:
-      - users: dev/api/users/users.md
-      - groups: dev/api/users/usergroups.md
-    - assets:
-      - assets: dev/api/assets/assets.md
-      - nodes: dev/api/assets/nodes.md
-      - authorization: dev/api/assets/authorization.md
-    - accounts:
-      - accounts: dev/api/accounts/accounts.md
-      - accountsecrets: dev/api/accounts/accountsecrets.md
-      - account_backup: dev/api/accounts/account_backup.md
-      - change-secret-automations: dev/api/accounts/changepwd.md
-      - account-backup-plans: dev/api/accounts/account_backup.md
-    - ticket: dev/api/ticket/ticket.md
-    - health: dev/api/health/health.md
-    - terminal:
-      - metrics: dev/api/terminal/metrics.md
+  - 免责声明: dev/api/disclaimer.md
+  - 前言: dev/api/prologue_api.md
+  - 认证方式:
+    - 概述: dev/api/auth/auth.md
+    - Session: dev/api/auth/session.md
+    - Token: dev/api/auth/token.md
+    - Private Token: dev/api/auth/private_token.md
+    - Access Key: dev/api/auth/access_key.md
+  - users:
+    - users: dev/api/users/users.md
+    - groups: dev/api/users/usergroups.md
+  - assets:
+    - assets: dev/api/assets/assets.md
+    - nodes: dev/api/assets/nodes.md
+    - authorization: dev/api/assets/authorization.md
+  - accounts:
+    - accounts: dev/api/accounts/accounts.md
+    - accountsecrets: dev/api/accounts/accountsecrets.md
+    - account_backup: dev/api/accounts/account_backup.md
+    - change-secret-automations: dev/api/accounts/changepwd.md
+    - account-backup-plans: dev/api/accounts/account_backup.md
+  - ticket: dev/api/ticket/ticket.md
+  - health: dev/api/health/health.md
+  - terminal:
+    - metrics: dev/api/terminal/metrics.md
 
 markdown_extensions:
   - admonition
