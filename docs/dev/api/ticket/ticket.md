@@ -4,7 +4,6 @@
 - **描述：**
 创建工单
 
-
 - **请求头（Headers）：**  
 
 | 键              | 值                                      | 备注                                                                 |
@@ -28,7 +27,31 @@
 | apply_date_expired| String(datetime)   | 失效日期（原文“失效日志”应为笔误）                                   | 是       | -                                                                      |
 | comment          | String              | 备注                                                                 | 否       | -                                                                      |
 
-**请求示例：**
+- **返回参数:**
+
+| 字段名称               | 数据类型          | 字段描述               | 备注 |
+|------------------------|-------------------|------------------------|------|
+| id                     | String            | id                     |      |
+| title                  | String            | 标题                   |      |
+| org_id                 | String            | 组织                   |      |
+| comment                | String            | 备注                   |      |
+| type                   | String            | 类型                   |      |
+| apply_nodes            | String[]          | 申请节点               |      |
+| apply_assets           | String[]          | 申请资产               |      |
+| apply_accounts         | String[]          | 申请账号               |      |
+| apply_actions          | String[]          | 申请动作               |      |
+| serial_num             | String            | 序列号                 |      |
+| approval_step          | String            | 流程步骤               |      |
+| state                  | String            | 工单动作               |      |
+| status                 | String            | 工单状态               |      |
+| applicant              | String            | 申请人                 |      |
+| org_name               | String            | 组织名称               |      |
+| apply_permission_name  | String            | 工单授权名称           |      |
+| apply_date_start       | String(date-time) | 申请开始时间           |      |
+| apply_date_expired     | String(date-time) | 申请结束时间           |      |
+
+
+- **请求示例：**
 
 **CURL**
 ```sh
@@ -98,30 +121,6 @@ if __name__ == "__main__":
     apply_asset_tickets()
 ```
 
-- **返回参数:**
-
-| 字段名称               | 数据类型          | 字段描述               | 备注 |
-|------------------------|-------------------|------------------------|------|
-| id                     | String            | id                     |      |
-| title                  | String            | 标题                   |      |
-| org_id                 | String            | 组织                   |      |
-| comment                | String            | 备注                   |      |
-| type                   | String            | 类型                   |      |
-| apply_nodes            | String[]          | 申请节点               |      |
-| apply_assets           | String[]          | 申请资产               |      |
-| apply_accounts         | String[]          | 申请账号               |      |
-| apply_actions          | String[]          | 申请动作               |      |
-| serial_num             | String            | 序列号                 |      |
-| approval_step          | String            | 流程步骤               |      |
-| state                  | String            | 工单动作               |      |
-| status                 | String            | 工单状态               |      |
-| applicant              | String            | 申请人                 |      |
-| org_name               | String            | 组织名称               |      |
-| apply_permission_name  | String            | 工单授权名称           |      |
-| apply_date_start       | String(date-time) | 申请开始时间           |      |
-| apply_date_expired     | String(date-time) | 申请结束时间           |      |
-
-
 ### GET
 - **描述：**
 获取工单
@@ -145,7 +144,25 @@ if __name__ == "__main__":
 | type     | String | 类型                                                                 | 否       | -      |
 |          |        | 可选值：apply_asset（申请资产）、login_confirm（用户登录复核）、command_confirm（命令复核）、login_asset_confirm（资产登录复核） |          |        |
 
-**请求示例**
+- **返回参数：**
+
+| 字段名称       | 数据类型          | 字段描述       | 备注 |
+|----------------|-------------------|----------------|------|
+| id             | String            | id             |      |
+| title          | String            | 标题           |      |
+| org_id         | String            | 组织           |      |
+| serial_num     | String            | 编号           |      |
+| approval_step  | String            | 工单审批步骤   |      |
+| type           | String            | 类型           |      |
+| state          | String            | 动作           |      |
+| applicant      | String            | 申请人         |      |
+| status         | String            | 状态           |      |
+| org_name       | String            | 组织名称       |      |
+| date_created   | String(date-time) | 创建时间       |      |
+| date_update    | String(date-time) | 更新时间       |      |
+
+
+- **请求示例**
 
 **CURL**
 ```sh
@@ -209,24 +226,6 @@ if __name__ == "__main__":
     search_tickets()
 ```
 
-- **返回参数：**
-
-| 字段名称       | 数据类型          | 字段描述       | 备注 |
-|----------------|-------------------|----------------|------|
-| id             | String            | id             |      |
-| title          | String            | 标题           |      |
-| org_id         | String            | 组织           |      |
-| serial_num     | String            | 编号           |      |
-| approval_step  | String            | 工单审批步骤   |      |
-| type           | String            | 类型           |      |
-| state          | String            | 动作           |      |
-| applicant      | String            | 申请人         |      |
-| status         | String            | 状态           |      |
-| org_name       | String            | 组织名称       |      |
-| date_created   | String(date-time) | 创建时间       |      |
-| date_update    | String(date-time) | 更新时间       |      |
-
-
 ## /api/v1/tickets/apply-asset-tickets/{id}/approve/
 
 ### PATCH
@@ -254,7 +253,7 @@ if __name__ == "__main__":
 | apply_date_expired| String(datetime)   | 失效日期（原文“失效日志”应为笔误，格式“String(date time)”修正为标准datetime格式表述） | 是       | -                                                                      |
 | comment          | String              | 备注                                                                 | 否       | -                                                                      |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -347,7 +346,7 @@ if __name__ == "__main__":
 | limit  | int    | 每一页显示条数 | 是       | -      |
 | offset | int    | 分页偏移量     | 是       | -      |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh

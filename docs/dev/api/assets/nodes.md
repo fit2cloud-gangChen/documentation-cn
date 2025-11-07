@@ -109,7 +109,7 @@ if __name__ == "__main__":
 ```
 
 ##  /api/v1/assets/nodes/{id}/children/
-=== "POST"
+
 ### POST
 - **描述：**
 创建节点
@@ -208,7 +208,7 @@ if __name__ == "__main__":
 ```
 
 ##  /api/v1/assets/nodes/{id}/ 
-=== "DELETE"
+
 ### DELETE
 - **描述：**
 删除节点

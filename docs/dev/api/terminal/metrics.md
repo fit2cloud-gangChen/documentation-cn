@@ -24,7 +24,32 @@
 | offline | array[string] | 离线实例主机名列表 |
 | critical | array[string] | 严重异常实例主机名列表 |
 
-**请求示例**
+- **响应示例：** 
+
+```json
+[
+	{
+		"total": 1,
+		"type": "celery",
+		"session_active": 0,
+		"high": [],
+		"normal": ["[Celery]-mtls.example.internal"],
+		"offline": [],
+		"critical": []
+	},
+	{
+		"total": 1,
+		"type": "core",
+		"session_active": 0,
+		"high": [],
+		"normal": ["[Core]-mtls.example.internal"],
+		"offline": [],
+		"critical": []
+	}
+]
+```
+
+- **请求示例**
 
 **CURL**
 
@@ -34,6 +59,7 @@ curl -X GET \
 	-H "X-JMS-ORG: $ORG" \
 	https://example/api/v1/terminal/components/metrics/
 ```
+
 **python**
 ```python
 # 使用 AK/SK 访问示例 (HTTPSignatureAuth)
@@ -74,28 +100,5 @@ if __name__ == "__main__":
 	get_terminal_components_metrics()
 ```
 
-- **响应示例：** 
 
-```json
-[
-	{
-		"total": 1,
-		"type": "celery",
-		"session_active": 0,
-		"high": [],
-		"normal": ["[Celery]-mtls.example.internal"],
-		"offline": [],
-		"critical": []
-	},
-	{
-		"total": 1,
-		"type": "core",
-		"session_active": 0,
-		"high": [],
-		"normal": ["[Core]-mtls.example.internal"],
-		"offline": [],
-		"critical": []
-	}
-]
-```
 

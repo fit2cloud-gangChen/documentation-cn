@@ -54,7 +54,7 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 
@@ -181,7 +181,7 @@ if __name__ == "__main__":
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 
@@ -323,7 +323,7 @@ if __name__ == "__main__":
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -455,7 +455,7 @@ if __name__ == "__main__":
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -615,7 +615,7 @@ if __name__ == "__main__":
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -695,7 +695,7 @@ if __name__ == "__main__":
 
 - **返回：** 204 No Content（删除成功无响应体）
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh

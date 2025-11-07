@@ -28,7 +28,7 @@
 | date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
 | comment      | String              | 备注                                                                 | 否       | -            |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -144,7 +144,7 @@ if __name__ == "__main__":
 | ---- | ------ | ---------- | ---- |
 | id   | String | 授权ID     | 是   |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -224,7 +224,7 @@ if __name__ == "__main__":
 | date_expired | String(datetime)    | 失效时间                                                             | 否       | -            |
 | comment      | String              | 备注                                                                 | 否       | -            |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh

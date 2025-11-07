@@ -34,7 +34,7 @@
 | org_name | String | 组织名称 |  |
 | date_created | String | 创建时间 |  |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 | X-JMS-ORG | `00000000-0000-0000-0000-000000000002` | 组织 ID，不传则默认归属 `Default` 组织 |
 | Content-Type | `application/json` | 请求/响应体为 JSON 格式 |
 
-**请求示例**
+- **请求示例**
 
 **CURL**
 ```sh

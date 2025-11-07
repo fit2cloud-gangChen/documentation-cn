@@ -20,7 +20,20 @@
 | redis_time | Float | Redis 探测耗时 (秒) | 精度为秒的小数 |
 | time | Int | 服务器当前时间 (Unix 时间戳, 秒) | 可用于时钟漂移检测 |
 
-**请求示例**
+
+- **响应示例**
+```json
+{
+	"status": true,
+	"db_status": true,
+	"db_time": 0.0032639503479003906,
+	"redis_status": true,
+	"redis_time": 0.0004906654357910156,
+	"time": 1762484673
+}
+```
+
+- **请求示例**
 
 **CURL**
 ```sh
@@ -52,15 +65,4 @@ if __name__ == '__main__':
 	check_health()
 ```
 
-- **响应示例**
-```json
-{
-	"status": true,
-	"db_status": true,
-	"db_time": 0.0032639503479003906,
-	"redis_status": true,
-	"redis_time": 0.0004906654357910156,
-	"time": 1762484673
-}
-```
 
