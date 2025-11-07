@@ -60,8 +60,10 @@ nav:
     - account_backup: dev/api/accounts/account_backup.md
     - change-secret-automations: dev/api/accounts/changepwd.md
     - account-backup-plans: dev/api/accounts/account_backup.md
-  - 工单: dev/api/ticket/ticket.md
-  - 健康检查: dev/api/health/health.md
+  - 工单: 
+    - ticket: dev/api/ticket/ticket.md
+  - 健康检查: 
+    - health: dev/api/health/health.md
   - 终端:
     - metrics: dev/api/terminal/metrics.md
 

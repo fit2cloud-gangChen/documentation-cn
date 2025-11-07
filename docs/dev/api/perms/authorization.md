@@ -6,11 +6,11 @@
 
 - **请求头（Headers）：**  
 
-| 键 (Header)      | 示例值                                       | 说明                            |
-| ---------------- | -------------------------------------------- | ------------------------------- |
-| Authorization     | `Bearer b96810faac725563304dada8c323c4fa061863d4` | 认证 Token，示例为管理员 token；格式固定为 `Bearer <token>` |
-| X-JMS-ORG         | `00000000-0000-0000-0000-000000000002`         | 组织 ID，不传则默认归属 `Default` 组织 |
-| Content-Type      | `application/json`                            | 请求/响应体为 JSON 格式           |
+| 键 | 值 | 备注 |
+| --- | --- | --- |
+| Authorization | Bearer b96810faac725563304dada8c323c4fa061863d4 | 管理员的 token 信息。 |
+| X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 组织 ID，留空则默认为 Default 组织 |
+| Content-Type | application/json | 请求/响应体为 JSON 格式 |
 
 - **请求体参数（Body）：**  
 
@@ -133,11 +133,11 @@ if __name__ == "__main__":
 
 - **请求头（Headers）：**  
 
-| 键 (Header)      | 示例值                                       | 说明                            |
-| ---------------- | -------------------------------------------- | ------------------------------- |
-| Authorization     | `Bearer b96810faac725563304dada8c323c4fa061863d4` | 认证 Token，示例为管理员 token；格式固定为 `Bearer <token>` |
-| X-JMS-ORG         | `00000000-0000-0000-0000-000000000002`         | 组织 ID，不传则默认归属 `Default` 组织 |
-| Content-Type      | `application/json`                            | 请求/响应体为 JSON 格式           |
+| 键 | 值 | 备注 |
+| --- | --- | --- |
+| Authorization | Bearer b96810faac725563304dada8c323c4fa061863d4 | 管理员的 token 信息。 |
+| X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 组织 ID，留空则默认为 Default 组织 |
+| Content-Type | application/json | 请求/响应体为 JSON 格式 |
 
 - **路径参数（Path Params）：**  
 
@@ -203,11 +203,11 @@ if __name__ == "__main__":
 
 - **请求头（Headers）：**  
 
-| 键 (Header)      | 示例值                                       | 说明                            |
-| ---------------- | -------------------------------------------- | ------------------------------- |
-| Authorization     | `Bearer b96810faac725563304dada8c323c4fa061863d4` | 认证 Token，示例为管理员 token；格式固定为 `Bearer <token>` |
-| X-JMS-ORG         | `00000000-0000-0000-0000-000000000002`         | 组织 ID，不传则默认归属 `Default` 组织 |
-| Content-Type      | `application/json`                            | 请求/响应体为 JSON 格式           |
+| 键 | 值 | 备注 |
+| --- | --- | --- |
+| Authorization | Bearer b96810faac725563304dada8c323c4fa061863d4 | 管理员的 token 信息。 |
+| X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 组织 ID，留空则默认为 Default 组织 |
+| Content-Type | application/json | 请求/响应体为 JSON 格式 |
 
 - **请求体参数（Body）：**  
 
