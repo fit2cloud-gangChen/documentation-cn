@@ -22,36 +22,37 @@
 | redis_time | Float | Redis 探测耗时 (秒) | 精度为秒的小数 |
 | time | Int | 服务器当前时间 (Unix 时间戳, 秒) | 可用于时钟漂移检测 |
 
-!!! tip "请求示例"
-	**CURL**
-	```sh
-	curl -X GET 'https://demo.jumpserver.org/api/v1/health/'
-	```
+**请求示例**
 
-	**Python**
-	```python
-	import requests
+**CURL**
+```sh
+curl -X GET 'https://demo.jumpserver.org/api/v1/health/'
+```
 
-	API_URL = 'https://demo.jumpserver.org'
+**Python**
+```python
+import requests
 
-	def check_health():
-		url = f"{API_URL}/api/v1/health/"
-		r = requests.get(url, timeout=5)
-		if r.status_code == 204 or not r.content:
-			print('健康: 无内容返回 (204/空)')
-			return
-		r.raise_for_status()
-		try:
-			data = r.json()
-			print('健康信息:')
-			print(data)
-		except ValueError:
-			print('健康: 非 JSON 内容, 原始:')
-			print(r.text)
+API_URL = 'https://demo.jumpserver.org'
 
-	if __name__ == '__main__':
-		check_health()
-	```
+def check_health():
+	url = f"{API_URL}/api/v1/health/"
+	r = requests.get(url, timeout=5)
+	if r.status_code == 204 or not r.content:
+		print('健康: 无内容返回 (204/空)')
+		return
+	r.raise_for_status()
+	try:
+		data = r.json()
+		print('健康信息:')
+		print(data)
+	except ValueError:
+		print('健康: 非 JSON 内容, 原始:')
+		print(r.text)
+
+if __name__ == '__main__':
+	check_health()
+```
 
 - **响应示例**
 ```json

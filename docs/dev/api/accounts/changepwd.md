@@ -12,66 +12,67 @@
 | X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 00000000-0000-0000-0000-000000000002为组织ID，此id号为默认组织：Default，留空则默认为 Default 组织。 |
 | Content-Type | application/json | 输出为json格式 |
 
-!!! tip "请求示例"
-    **CURL**
-    ```sh
-    curl -X GET 'https://localhost/api/v1/accounts/change-secret-automations/?offset=0&limit=15' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-    ```
+**请求示例**
 
-    **Python**
-    ```python
-            # Python 示例
+**CURL**
+```sh
+curl -X GET 'https://localhost/api/v1/accounts/change-secret-automations/?offset=0&limit=15' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
 
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            SEARCH_WORD = "your search word"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def search_change_secret_automations(keyword):
-                url = f"{API_URL}/api/v1/accounts/change-secret-automations/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+SEARCH_WORD = "your search word"
 
-                params = {
-                    "search": keyword
-                }
-                
-                try:
-                    response = requests.get(
-                        url, auth = auth, headers = headers,
-                        params = params
-                    )
-                    response.raise_for_status()
-                    nodes_data = response.json()
-                    if not nodes_data:
-                        print(f"未找到改密计划")
-                    else:
-                        print(f"查询到 {len(nodes_data)} 个匹配的改密计划：")
-                        print(json.dumps(nodes_data, indent = 2, ensure_ascii = False))
-                except Exception as e:
-                    print(f"错误:{e}")
+def search_change_secret_automations(keyword):
+    url = f"{API_URL}/api/v1/accounts/change-secret-automations/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-            if __name__ == "__main__":
-                search_change_secret_automations(SEARCH_WORD)
-            ```
+    params = {
+        "search": keyword
+    }
+
+    try:
+        response = requests.get(
+            url, auth = auth, headers = headers,
+            params = params
+        )
+        response.raise_for_status()
+        nodes_data = response.json()
+        if not nodes_data:
+            print(f"未找到改密计划")
+        else:
+            print(f"查询到 {len(nodes_data)} 个匹配的改密计划：")
+            print(json.dumps(nodes_data, indent = 2, ensure_ascii = False))
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    search_change_secret_automations(SEARCH_WORD)
+```
 
 - **返回参数:**
 
@@ -115,89 +116,90 @@
 | X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 00000000-0000-0000-0000-000000000002为组织ID，此id号为默认组织：Default，留空则默认为 Default 组织。 |
 | Content-Type | application/json | 输出为json格式 |
 
-!!! tip "请求示例"
-    **CURL**
-    ```sh
-    curl -X POST 'https://localhost/api/v1/accounts/change-secret-automations/' \
-        -H 'Content-Type: application/json' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-        -d '{
-            "accounts": ["root"],
-            "secret_strategy": "random",
-            "secret_type": "password",
-            "password_rules": {
-                "length": "16"
-            },
-            "is_periodic": true,
-            "interval": 24,
-            "is_active": true,
-            "name": "test",
-            "assets": ["9266b1f8-f74d-482c-805a-6eed0e099a42"],
-            "comment": "test"
-        }'
-    ```
+**请求示例**
 
-    **Python**
-    ```python
-            # Python 示例
+**CURL**
+```sh
+curl -X POST 'https://localhost/api/v1/accounts/change-secret-automations/' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+    -d '{
+        "accounts": ["root"],
+        "secret_strategy": "random",
+        "secret_type": "password",
+        "password_rules": {
+            "length": "16"
+        },
+        "is_periodic": true,
+        "interval": 24,
+        "is_active": true,
+        "name": "test",
+        "assets": ["9266b1f8-f74d-482c-805a-6eed0e099a42"],
+        "comment": "test"
+    }'
+```
 
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            ASSET_ID    = "your asset id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def create_change_secret_automations():
-                url = f"{API_URL}/api/v1/accounts/change-secret-automations/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
-                data = {
-                    "accounts": ["root"],
-                    "secret_strategy": "random",
-                    "secret_type": "password",
-                    "password_rules": {
-                        "length": "16"
-                    },
-                    "is_periodic": True,
-                    "interval": 24,
-                    "is_active": True,
-                    "name": "test",
-                    "assets": [ASSET_ID],
-                    "comment": "test"
-                }
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+ASSET_ID    = "your asset id"
 
-                try:
-                    response = requests.post(
-                        url, auth = auth, headers = headers,
-                        data = json.dumps(data)
-                    )
-                    response.raise_for_status()
-                    print("改密计划创建成功:")
-                    print(json.dumps(response.json(), indent = 2))
-                except Exception as e:
-                    print(f"错误:{e}")
+def create_change_secret_automations():
+    url = f"{API_URL}/api/v1/accounts/change-secret-automations/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
+    data = {
+        "accounts": ["root"],
+        "secret_strategy": "random",
+        "secret_type": "password",
+        "password_rules": {
+            "length": "16"
+        },
+        "is_periodic": True,
+        "interval": 24,
+        "is_active": True,
+        "name": "test",
+        "assets": [ASSET_ID],
+        "comment": "test"
+    }
 
-            if __name__ == "__main__":
-                create_change_secret_automations()
-            ```
+    try:
+        response = requests.post(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data)
+        )
+        response.raise_for_status()
+        print("改密计划创建成功:")
+        print(json.dumps(response.json(), indent = 2))
+    except Exception as e:
+        print(f"错误:{e}")
 
- - **返回参数:**
+if __name__ == "__main__":
+    create_change_secret_automations()
+```
+
+- **返回参数:**
 
 | 字段名称 | 数据类型 | 字段描述 | 备注 |
 |----------|----------|----------|------|
@@ -228,7 +230,7 @@
 - **描述：**
 更新改密计划
 
- - **请求头（Headers）：** 
+- **请求头（Headers）：** 
 
 | 键 | 值 | 备注 |
 |----|----|------|
@@ -236,7 +238,7 @@
 | X-JMS-ORG | 00000000-0000-0000-0000-000000000002 | 00000000-0000-0000-0000-000000000002为组织ID，此id号为默认组织：Default，留空则默认为 Default 组织。 |
 | Content-Type | application/json | 输出为json格式 |
 
- - **请求体参数（Body）：** 
+- **请求体参数（Body）：** 
 
 | 参数名 | 类型 | 描述 | 是否必选 | 默认值 |
 |--------|------|------|----------|--------|
@@ -255,90 +257,91 @@
 | secret | String | 密码 | 否 | secret_strateg=specific且secret_type=password时必填 |
 | comment | String | 备注 | 否 | - |
 
-    !!! tip "请求示例"
-    **CURL**
-    ```sh
-    curl -X PUT 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c/' \
-        -H 'Content-Type: application/json' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-        -d '{
-            "accounts": ["root"],
-            "secret_strategy": "random",
-            "secret_type": "password",
-            "password_rules": {
-                "length": "16"
-            },
-            "is_periodic": true,
-            "interval": 24,
-            "is_active": true,
-            "name": "test_update",
-            "assets": ["9266b1f8-f74d-482c-805a-6eed0e099a42"],
-            "comment": "test"
-        }'
-    ```
+**请求示例**
 
-    **Python**
-    ```python
-            # Python 示例
+**CURL**
+```sh
+curl -X PUT 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c/' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+    -d '{
+        "accounts": ["root"],
+        "secret_strategy": "random",
+        "secret_type": "password",
+        "password_rules": {
+            "length": "16"
+        },
+        "is_periodic": true,
+        "interval": 24,
+        "is_active": true,
+        "name": "test_update",
+        "assets": ["9266b1f8-f74d-482c-805a-6eed0e099a42"],
+        "comment": "test"
+    }'
+```
 
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            ASSET_ID    = "your asset id"
-            MIS_ID      = "your mission id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def update_change_secret_automations():
-                url = f"{API_URL}/api/v1/accounts/change-secret-automations/{MIS_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
-                data = {
-                    "accounts": ["root"],
-                    "secret_strategy": "random",
-                    "secret_type": "password",
-                    "password_rules": {
-                        "length": "16"
-                    },
-                    "is_periodic": True,
-                    "interval": 24,
-                    "is_active": True,
-                    "name": "test",
-                    "assets": [ASSET_ID],
-                    "comment": "test"
-                }
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+ASSET_ID    = "your asset id"
+MIS_ID      = "your mission id"
 
-                try:
-                    response = requests.put(
-                        url, auth = auth, headers = headers,
-                        data = json.dumps(data)
-                    )
-                    response.raise_for_status()
-                    print("改密计划更新成功:")
-                    print(json.dumps(response.json(), indent = 2))
-                except Exception as e:
-                    print(f"错误:{e}")
+def update_change_secret_automations():
+    url = f"{API_URL}/api/v1/accounts/change-secret-automations/{MIS_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
+    data = {
+        "accounts": ["root"],
+        "secret_strategy": "random",
+        "secret_type": "password",
+        "password_rules": {
+            "length": "16"
+        },
+        "is_periodic": True,
+        "interval": 24,
+        "is_active": True,
+        "name": "test",
+        "assets": [ASSET_ID],
+        "comment": "test"
+    }
 
-            if __name__ == "__main__":
-                update_change_secret_automations()
-            ```
+    try:
+        response = requests.put(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data)
+        )
+        response.raise_for_status()
+        print("改密计划更新成功:")
+        print(json.dumps(response.json(), indent = 2))
+    except Exception as e:
+        print(f"错误:{e}")
 
- - **返回参数:**
+if __name__ == "__main__":
+    update_change_secret_automations()
+```
+
+- **返回参数:**
 
 | 字段名称 | 数据类型 | 字段描述 | 备注 |
 |----------|----------|----------|------|
@@ -367,7 +370,7 @@
 - **描述：**
 删除改密计划
 
- - **请求头（Headers）：**  
+- **请求头（Headers）：**  
 
 | 键 (Header) | 示例值 | 说明 |
 |-------------|--------|------|
@@ -375,63 +378,64 @@
 | X-JMS-ORG | `00000000-0000-0000-0000-000000000002` | 组织 ID，不传则默认归属 `Default` 组织 |
 | Content-Type | `application/json` | 请求/响应体为 JSON 格式 |
 
- - **请求体参数（Body）：**  
+- **请求体参数（Body）：**  
 
 | 参数名 | 类型 | 描述 | 是否必选 | 默认值 |
 |--------|------|------|----------|--------|
 | id | String | 改密计划ID | 是 | - |
 
-    !!! tip "请求示例"
-    **CURL**
-    ```sh
-    curl -X DELETE 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c/' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-    ```
+**请求示例**
 
-    **Python**
-    ```python
-            # Python 示例
+**CURL**
+```sh
+curl -X DELETE 'https://localhost/api/v1/accounts/change-secret-automations/0a6a2e40-f92b-4aca-94ef-5f6ae5b0966c/' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
 
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            MIS_ID      = "your mission id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def delete_change_secret_automations():
-                url = f"{API_URL}/api/v1/accounts/change-secret-automations/{MIS_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+MIS_ID      = "your mission id"
 
-                try:
-                    response = requests.delete(
-                        url, auth = auth, headers = headers,
-                        verify = False
-                    )
-                    response.raise_for_status()
-                    print("改密计划删除成功")
-                except Exception as e:
-                    print(f"错误:{e}")
+def delete_change_secret_automations():
+    url = f"{API_URL}/api/v1/accounts/change-secret-automations/{MIS_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-            if __name__ == "__main__":
-                delete_change_secret_automations()
-            ```
+    try:
+        response = requests.delete(
+            url, auth = auth, headers = headers,
+            verify = False
+        )
+        response.raise_for_status()
+        print("改密计划删除成功")
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    delete_change_secret_automations()
+```
 
 ## /api/v1/accounts/change-secret-executions/
 
@@ -454,66 +458,67 @@
 | automation | String | 改密计划ID | 是 | - |
 
 
-!!! tip "请求示例"
-    **CURL**
-    ```sh
-    curl -X POST 'https://localhost/api/v1/accounts/change-secret-executions/' \
-        -H 'Content-Type: application/json' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-000000000002' \
-        -d '{
-            "automation": "bc778562-630e-4c89-971a-3ec629d4fd3f"
-        }'
-    ```
+**请求示例**
 
-    **Python**
-    ```python
-        # Python 示例
+**CURL**
+```sh
+curl -X POST 'https://localhost/api/v1/accounts/change-secret-executions/' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-000000000002' \
+    -d '{
+        "automation": "bc778562-630e-4c89-971a-3ec629d4fd3f"
+    }'
+```
 
-        import requests
-        import json
-        from datetime import datetime
-        from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-        API_URL     = "https://localhost"
-        KEY_ID      = "your id"
-        KEY_SECRET  = "your secret"
-        ORG_ID      = "your org id"
-        MIS_ID      = "your mission id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-        def automations_executions():
-            url = f"{API_URL}/api/v1/accounts/change-secret-executions/"
-            gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-            signature_headers = ['(request-target)', 'accept', 'date']
-            headers = {
-                "Content-Type": "application/json",
-                "X-JMS-ORG": ORG_ID,
-                "Date": datetime.utcnow().strftime(gmt_form)
-            }
-            auth = HTTPSignatureAuth(
-                key_id = KEY_ID, secret = KEY_SECRET,
-                algorithm = "hmac-sha256",
-                headers = signature_headers
-            )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+MIS_ID      = "your mission id"
 
-            data = {
-                "automation": MIS_ID
-            }
-            
-            try:
-                response = requests.post(
-                    url, auth = auth, headers = headers,
-                    data = json.dumps(data),
-                    verify = False
-                )
-                response.raise_for_status()
-                print(f"改密计划已执行")
-            except Exception as e:
-                print(f"错误:{e}")
+def automations_executions():
+    url = f"{API_URL}/api/v1/accounts/change-secret-executions/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-        if __name__ == "__main__":
-            automations_executions()
-        ```
+    data = {
+        "automation": MIS_ID
+    }
+
+    try:
+        response = requests.post(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data),
+            verify = False
+        )
+        response.raise_for_status()
+        print(f"改密计划已执行")
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    automations_executions()
+```
 
 - **返回参数:**
 

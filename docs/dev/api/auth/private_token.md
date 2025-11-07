@@ -18,36 +18,38 @@ u.private_token  # 若已存在可直接读取
 
 ## 使用方式
 
-!!! tip "请求示例：" 
-    **CURL**
-    ```sh
-    curl https://demo.jumpserver.org/api/v1/users/users/ \
-        -H 'Authorization: Token 937b38011acf499eb474e2fecb424ab3' \
-        -H 'Content-Type: application/json' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-    ```
-    **Python**
-    ```python
-    import requests, json
+**请求示例：**
 
-    API_URL = 'https://demo.jumpserver.org'
-    PRIVATE_TOKEN = '937b38011acf499eb474e2fecb424ab3'
-    ORG_ID = '00000000-0000-0000-0000-000000000002'
+**CURL**
+```sh
+curl https://demo.jumpserver.org/api/v1/users/users/ \
+    -H 'Authorization: Token 937b38011acf499eb474e2fecb424ab3' \
+    -H 'Content-Type: application/json' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
+**Python**
+```python
+import requests, json
 
-    def get_user_info():
-        url = API_URL + '/api/v1/users/users/'
-        headers = {
-            'Authorization': 'Token ' + PRIVATE_TOKEN,
-            'X-JMS-ORG': ORG_ID
-        }
-        r = requests.get(url, headers=headers)
-        r.raise_for_status()
-        print(json.dumps(r.json(), indent=2, ensure_ascii=False))
+API_URL = 'https://demo.jumpserver.org'
+PRIVATE_TOKEN = '937b38011acf499eb474e2fecb424ab3'
+ORG_ID = '00000000-0000-0000-0000-000000000002'
 
-    if __name__ == '__main__':
-        get_user_info()
-    ```
+def get_user_info():
+    url = API_URL + '/api/v1/users/users/'
+    headers = {
+        'Authorization': 'Token ' + PRIVATE_TOKEN,
+        'X-JMS-ORG': ORG_ID
+    }
+    r = requests.get(url, headers=headers)
+    r.raise_for_status()
+    print(json.dumps(r.json(), indent=2, ensure_ascii=False))
 
-!!! tip "注意事项"
-    - Private Token 拥有与创建者相同权限，务必妥善保管。
-    - 建议定期轮换并撤销不再使用的 Token。
+if __name__ == '__main__':
+    get_user_info()
+```
+
+**注意事项**
+
+- Private Token 拥有与创建者相同权限，务必妥善保管。
+- 建议定期轮换并撤销不再使用的 Token。

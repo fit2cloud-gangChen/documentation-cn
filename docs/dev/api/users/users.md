@@ -56,60 +56,60 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-!!! tip "请求示例"
+**请求示例**
 
-    **CURL**
+**CURL**
 
-    ``` sh
-    curl -X GET 'https://localhost/api/v1/users/users/?offset=0&limit=15' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-    ```
+``` sh
+curl -X GET 'https://localhost/api/v1/users/users/?offset=0&limit=15' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
 
-    **Python**
+**Python**
 
-    ```python
-    # Python 示例
+```python
+# Python 示例
 
-    import requests
-    import json
-    from datetime import datetime
-    from httpsig.requests_auth import HTTPSignatureAuth
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-    API_URL     = "https://localhost"
-    KEY_ID      = "your id"
-    KEY_SECRET  = "your secret"
-    ORG_ID      = "your org id"
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
 
-    def get_user_info():
-        url = f"{API_URL}/api/v1/users/users/"
-        gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-        signature_headers = ['(request-target)', 'accept', 'date']
-        headers = {
-            "Content-Type": "application/json",
-            "X-JMS-ORG": ORG_ID,
-            "Date": datetime.utcnow().strftime(gmt_form)
-        }
-        auth = HTTPSignatureAuth(
-            key_id = KEY_ID, secret = KEY_SECRET,
-            algorithm = "hmac-sha256",
-            headers = signature_headers
+def get_user_info():
+    url = f"{API_URL}/api/v1/users/users/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
+
+    try:
+        response = requests.get(
+            url, auth = auth, headers = headers
         )
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"API 请求失败:{e}")
+        return None
 
-        try:
-            response = requests.get(
-                url, auth = auth, headers = headers
-            )
-            response.raise_for_status()
-            return response.json()
-        except requests.RequestException as e:
-            print(f"API 请求失败:{e}")
-            return None
-
-    if __name__ == "__main__":
-        result = get_user_info()
-        print(json.dumps(result, indent = 2, ensure_ascii = False))
-    ```
+if __name__ == "__main__":
+    result = get_user_info()
+    print(json.dumps(result, indent = 2, ensure_ascii = False))
+```
 
 ### POST
 
@@ -183,87 +183,87 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-    !!! tip "请求示例"
+**请求示例**
 
-    **CURL**
+**CURL**
 
-    ``` sh
-    curl -X POST 'https://localhost/api/v1/users/users/' \
-        -H 'Content-Type:application/json' \
-        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-        -d '{ 
-                "name": "api_test",
-                "username": "api_test",
-                "password": "apitest",
-                "password_strategy":"custom", 
-                "email":"api_test@fit2cloud.com", 
-                "mfa_level":0, 
-                "source":"local", 
-                "system_roles":[ 
-                    {"pk":"00000000-0000-0000-0000-000000000003"} 
-                ], 
-                "org_roles":[ 
-                    {"pk":"00000000-0000-0000-0000-000000000007"} 
-                ] 
-            }'
-    ```
-
-    **Python**
-
-    ```python
-    # Python 示例
-
-    import requests
-    import json
-    from datetime import datetime
-    from httpsig.requests_auth import HTTPSignatureAuth
-
-    API_URL     = "https://localhost"
-    KEY_ID      = "your id"
-    KEY_SECRET  = "your secret"
-    ORG_ID      = "your org id"
-
-    def create_user():
-        url = f"{API_URL}/api/v1/users/users/"
-        gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-        signature_headers = ['(request-target)', 'accept', 'date']
-        headers = {
-            "Content-Type": "application/json",
-            "X-JMS-ORG": ORG_ID,
-            "Date": datetime.utcnow().strftime(gmt_form)
-        }
-        auth = HTTPSignatureAuth(
-            key_id = KEY_ID, secret = KEY_SECRET,
-            algorithm = "hmac-sha256",
-            headers = signature_headers
-        )
-        data = {
+``` sh
+curl -X POST 'https://localhost/api/v1/users/users/' \
+    -H 'Content-Type:application/json' \
+    -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+    -d '{ 
             "name": "api_test",
             "username": "api_test",
             "password": "apitest",
-            "password_strategy": "custom",
-            "email": "api_test@fit2cloud.com",
-            "mfa_level": 0,
-            "source": "local",
-            "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
-            "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
-        }
+            "password_strategy":"custom", 
+            "email":"api_test@fit2cloud.com", 
+            "mfa_level":0, 
+            "source":"local", 
+            "system_roles":[ 
+                {"pk":"00000000-0000-0000-0000-000000000003"} 
+            ], 
+            "org_roles":[ 
+                {"pk":"00000000-0000-0000-0000-000000000007"} 
+            ] 
+        }'
+```
 
-        try:
-            response = requests.post(
-                url, auth = auth, headers = headers,
-                data = json.dumps(data)
-            )
-            response.raise_for_status()
-            print("用户创建成功:")
-            print(json.dumps(response.json(), indent = 2))
-        except Exception as e:
-            print(f"错误:{e}")
+**Python**
 
-    if __name__ == "__main__":
-        create_user()
-    ```
+```python
+# Python 示例
+
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
+
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+
+def create_user():
+    url = f"{API_URL}/api/v1/users/users/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
+    data = {
+        "name": "api_test",
+        "username": "api_test",
+        "password": "apitest",
+        "password_strategy": "custom",
+        "email": "api_test@fit2cloud.com",
+        "mfa_level": 0,
+        "source": "local",
+        "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+        "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+    }
+
+    try:
+        response = requests.post(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data)
+        )
+        response.raise_for_status()
+        print("用户创建成功:")
+        print(json.dumps(response.json(), indent = 2))
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    create_user()
+```
 
 ## **/api/v1/users/users/{id}**
 
@@ -325,58 +325,59 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-    !!! tip "请求示例"
-        **CURL**
-        ```sh
-        curl -X GET 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-        ```
+**请求示例**
 
-        **Python**
-        ```python
-            # Python 示例
+**CURL**
+```sh
+curl -X GET 'https://localhost/api/v1/users/users/USER_ID/' \
+    -H 'Authorization: Bearer <token>' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
 
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            USER_ID     = "your user id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def get_user_info():
-                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+USER_ID     = "your user id"
 
-                try:
-                    response = requests.get(
-                        url, auth = auth, headers = headers
-                    )
-                    response.raise_for_status()
-                    return response.json()
-                except requests.RequestException as e:
-                    print(f"API 请求失败:{e}")
-                    return None
+def get_user_info():
+    url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-            if __name__ == "__main__":
-                result = get_user_info()
-                print(json.dumps(result, indent = 2, ensure_ascii = False))
-            ```
+    try:
+        response = requests.get(
+            url, auth = auth, headers = headers
+        )
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"API 请求失败:{e}")
+        return None
+
+if __name__ == "__main__":
+    result = get_user_info()
+    print(json.dumps(result, indent = 2, ensure_ascii = False))
+```
 
 ### PUT
 
@@ -456,88 +457,88 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-    !!! tip "请求示例"
+**请求示例**
 
-        **CURL**
-        ```sh
-        curl -X PUT 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{
-                "name": "new_name",
-                "username": "new_username",
-                "password_strategy": "email",
-                "email": "user@fit2cloud.com",
-                "mfa_level": 1,
-                "source": "local",
-                "date_expired": "2093-02-05T08:28:41.726694Z",
-                "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
-                "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
-                }'
-        ```
+**CURL**
+```sh
+curl -X PUT 'https://localhost/api/v1/users/users/USER_ID/' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <token>' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+    -d '{
+        "name": "new_name",
+        "username": "new_username",
+        "password_strategy": "email",
+        "email": "user@fit2cloud.com",
+        "mfa_level": 1,
+        "source": "local",
+        "date_expired": "2093-02-05T08:28:41.726694Z",
+        "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+        "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+        }'
+```
 
-        **Python**
-        ```python
-            # Python 示例
-            
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            USER_ID     = "your user id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def update_user():
-                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
-                headers = {
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {TOKEN}",
-                    "X-JMS-ORG": ORG_ID
-                }
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+USER_ID     = "your user id"
 
-                data = {
-                    "name": "api_test",
-                    "username": "api_test_update",
-                    "password": "apitest",
-                    "password_strategy": "custom",
-                    "email": "api_test@fit2cloud.com",
-                    "mfa_level": 0,
-                    "source": "local",
-                    "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
-                    "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
-                }
+def update_user():
+    url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {TOKEN}",
+        "X-JMS-ORG": ORG_ID
+    }
 
-                try:
-                    response = requests.put(
-                        url, auth = auth, headers = headers,
-                        data = json.dumps(data)
-                    )
-                    response.raise_for_status()
-                    print("用户更新成功:")
-                    print(json.dumps(response.json(), indent=2))
-                except Exception as e:
-                    print(f"错误:{e}")
+    data = {
+        "name": "api_test",
+        "username": "api_test_update",
+        "password": "apitest",
+        "password_strategy": "custom",
+        "email": "api_test@fit2cloud.com",
+        "mfa_level": 0,
+        "source": "local",
+        "system_roles": [{"pk": "00000000-0000-0000-0000-000000000003"}],
+        "org_roles": [{"pk": "00000000-0000-0000-0000-000000000007"}]
+    }
 
-            if __name__ == "__main__":
-                update_user()
-            ```
+    try:
+        response = requests.put(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data)
+        )
+        response.raise_for_status()
+        print("用户更新成功:")
+        print(json.dumps(response.json(), indent=2))
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    update_user()
+```
 
 ### PATCH
 
@@ -616,65 +617,65 @@
 | date_updated | string(date-time) | 更新时间 |  |
 | date_password_last_updated | string(date-time) | 密码更新时间 |  |
 
-    !!! tip "请求示例"
+**请求示例**
 
-        **CURL**
-        ```sh
-        curl -X PATCH 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Content-Type: application/json' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-            -d '{ "name": "partial_update_name" }'
-        ```
+**CURL**
+```sh
+curl -X PATCH 'https://localhost/api/v1/users/users/USER_ID/' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer <token>' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+    -d '{ "name": "partial_update_name" }'
+```
 
-        **Python**
-        ```python
-            # Python 示例
-            
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            USER_ID     = "your user id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def partial_update_user():
-                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+USER_ID     = "your user id"
 
-                data = {
-                    "username": "api_test_update"
-                }
+def partial_update_user():
+    url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-                try:
-                    response = requests.patch(
-                        url, auth = auth, headers = headers,
-                        data = json.dumps(data)
-                    )
-                    response.raise_for_status()
-                    print("用户更新成功:")
-                    print(json.dumps(response.json(), indent = 2))
-                except Exception as e:
-                    print(f"错误:{e}")
+    data = {
+        "username": "api_test_update"
+    }
 
-            if __name__ == "__main__":
-                partial_update_user()
-            ```
+    try:
+        response = requests.patch(
+            url, auth = auth, headers = headers,
+            data = json.dumps(data)
+        )
+        response.raise_for_status()
+        print("用户更新成功:")
+        print(json.dumps(response.json(), indent = 2))
+    except Exception as e:
+        print(f"错误:{e}")
+
+if __name__ == "__main__":
+    partial_update_user()
+```
 
 ### DELETE
 
@@ -696,55 +697,55 @@
 
 - **返回：** 204 No Content（删除成功无响应体）
 
-    !!! tip "请求示例"
+**请求示例**
 
-        **CURL**
-        ```sh
-        curl -X DELETE 'https://localhost/api/v1/users/users/USER_ID/' \
-            -H 'Authorization: Bearer <token>' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-        ```
-        **Python**
-        ```python
-            # Python 示例
-            
-            import requests
-            import json
-            from datetime import datetime
-            from httpsig.requests_auth import HTTPSignatureAuth
+**CURL**
+```sh
+curl -X DELETE 'https://localhost/api/v1/users/users/USER_ID/' \
+    -H 'Authorization: Bearer <token>' \
+    -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+```
+**Python**
+```python
+# Python 示例
 
-            API_URL     = "https://localhost"
-            KEY_ID      = "your id"
-            KEY_SECRET  = "your secret"
-            ORG_ID      = "your org id"
-            USER_ID     = "your user id"
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-            def delete_user():
-                url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
-                gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-                signature_headers = ['(request-target)', 'accept', 'date']
-                headers = {
-                    "Content-Type": "application/json",
-                    "X-JMS-ORG": ORG_ID,
-                    "Date": datetime.utcnow().strftime(gmt_form)
-                }
-                auth = HTTPSignatureAuth(
-                    key_id = KEY_ID, secret = KEY_SECRET,
-                    algorithm = "hmac-sha256",
-                    headers = signature_headers
-                )
+API_URL     = "https://localhost"
+KEY_ID      = "your id"
+KEY_SECRET  = "your secret"
+ORG_ID      = "your org id"
+USER_ID     = "your user id"
 
-                try:
-                    response = requests.delete(
-                        url, auth = auth, headers = headers
-                    )
-                    response.raise_for_status()
-                    print("用户删除成功:")
-                    print(json.dumps(response.json(), indent=2))
-                except Exception as e:
-                    print(f"API 请求失败:{e}")
-                    return None
+def delete_user():
+    url = f"{API_URL}/api/v1/users/users/{USER_ID}/"
+    gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+    signature_headers = ['(request-target)', 'accept', 'date']
+    headers = {
+        "Content-Type": "application/json",
+        "X-JMS-ORG": ORG_ID,
+        "Date": datetime.utcnow().strftime(gmt_form)
+    }
+    auth = HTTPSignatureAuth(
+        key_id = KEY_ID, secret = KEY_SECRET,
+        algorithm = "hmac-sha256",
+        headers = signature_headers
+    )
 
-            if __name__ == "__main__":
-                delete_user()
-            ```
+    try:
+        response = requests.delete(
+            url, auth = auth, headers = headers
+        )
+        response.raise_for_status()
+        print("用户删除成功:")
+        print(json.dumps(response.json(), indent=2))
+    except Exception as e:
+        print(f"API 请求失败:{e}")
+        return None
+
+if __name__ == "__main__":
+    delete_user()
+```

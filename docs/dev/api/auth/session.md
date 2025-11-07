@@ -8,23 +8,25 @@ Session 认证适用于已经通过 Web 页面登录的场景。浏览器登录�
 - 发起请求时在请求头中添加：`Cookie: jms_sessionid=<value>`。
 - 不需要额外的 Token 或签名。
 
-!!! tip "请求示例："
-  ```python
-  import requests
+**请求示例：**
 
-  JMS_URL = 'https://demo.jumpserver.org'
-  SESSIONID = 'your_jms_sessionid'  # 浏览器登录后抓包或开发者工具中获取
+```python
+import requests
 
-  headers = {
-      'Cookie': f'jms_sessionid={SESSIONID}',
-      'X-JMS-ORG': '00000000-0000-0000-0000-000000000002'
-  }
-  resp = requests.get(f'{JMS_URL}/api/v1/users/users/', headers=headers)
-  resp.raise_for_status()
-  print(resp.json())
-  ```
+JMS_URL = 'https://demo.jumpserver.org'
+SESSIONID = 'your_jms_sessionid'  # 浏览器登录后抓包或开发者工具中获取
 
-!!! tip "注意事项"
-  - Session 认证依赖服务器端 Session 存储，有过期时间，适用于交互式或短期脚本。
-  - 推荐在自动化长期任务里使用 Token / Private Token / Access Key。
-  - 若需跨域或第三方脚本调用，请考虑改用其它认证方式以避免浏览器安全限制。
+headers = {
+    'Cookie': f'jms_sessionid={SESSIONID}',
+    'X-JMS-ORG': '00000000-0000-0000-0000-000000000002'
+}
+resp = requests.get(f'{JMS_URL}/api/v1/users/users/', headers=headers)
+resp.raise_for_status()
+print(resp.json())
+```
+
+**注意事项**
+
+- Session 认证依赖服务器端 Session 存储，有过期时间，适用于交互式或短期脚本。
+- 推荐在自动化长期任务里使用 Token / Private Token / Access Key。
+- 若需跨域或第三方脚本调用，请考虑改用其它认证方式以避免浏览器安全限制。

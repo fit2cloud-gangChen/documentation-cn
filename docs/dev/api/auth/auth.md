@@ -18,7 +18,6 @@ JumpServer API 当前支持以下四种认证方式：
 - [Private Token 认证](private_token.md)
 
 ## 3 Swagger UI 在线文档
-!!! tip ""
 完成JumpServer部署后可以通过访问 swagger UI 来查看和测试完整的 API。
 ![api_swagger](../../../img/api_swagger.png)
 
@@ -29,4 +28,3 @@ JumpServer API 当前支持以下四种认证方式：
 
 
 
-   

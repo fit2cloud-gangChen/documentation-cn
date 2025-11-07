@@ -24,54 +24,55 @@
 | offline | array[string] | 离线实例主机名列表 |
 | critical | array[string] | 严重异常实例主机名列表 |
 
-!!! tip "请求示例"
-    **CURL**
+**请求示例**
 
-    ```bash
-    curl -X GET \
-    	-H "Authorization: Bearer $TOKEN" \
-    	-H "X-JMS-ORG: $ORG" \
-    	https://example/api/v1/terminal/components/metrics/
-    ```
-    **python**
-    ```python
-    # 使用 AK/SK 访问示例 (HTTPSignatureAuth)
-    import requests
-    import json
-    from datetime import datetime
-    from httpsig.requests_auth import HTTPSignatureAuth
+**CURL**
 
-    API_URL    = "https://example"          # 站点根地址
-    KEY_ID     = "your key id"              # Access Key ID
-    KEY_SECRET = "your key secret"          # Access Key Secret
-    ORG_ID     = "your org id"              # 组织 ID
+```bash
+curl -X GET \
+	-H "Authorization: Bearer $TOKEN" \
+	-H "X-JMS-ORG: $ORG" \
+	https://example/api/v1/terminal/components/metrics/
+```
+**python**
+```python
+# 使用 AK/SK 访问示例 (HTTPSignatureAuth)
+import requests
+import json
+from datetime import datetime
+from httpsig.requests_auth import HTTPSignatureAuth
 
-    def get_terminal_components_metrics():
-    	url = f"{API_URL}/api/v1/terminal/components/metrics/"
-    	gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
-    	signature_headers = ['(request-target)', 'accept', 'date']
-    	headers = {
-    		"Content-Type": "application/json",
-    		"X-JMS-ORG": ORG_ID,
-    		"Date": datetime.utcnow().strftime(gmt_form)
-    	}
-    	auth = HTTPSignatureAuth(
-    		key_id=KEY_ID,
-    		secret=KEY_SECRET,
-    		algorithm="hmac-sha256",
-    		headers=signature_headers
-    	)
-    	try:
-    		resp = requests.get(url, auth=auth, headers=headers, timeout=10)
-    		resp.raise_for_status()
-    		data = resp.json()
-    		print(json.dumps(data, indent=2, ensure_ascii=False))
-    	except Exception as e:
-    		print(f"请求失败: {e}")
+API_URL    = "https://example"          # 站点根地址
+KEY_ID     = "your key id"              # Access Key ID
+KEY_SECRET = "your key secret"          # Access Key Secret
+ORG_ID     = "your org id"              # 组织 ID
 
-    if __name__ == "__main__":
-    	get_terminal_components_metrics()
-    ```
+def get_terminal_components_metrics():
+	url = f"{API_URL}/api/v1/terminal/components/metrics/"
+	gmt_form = "%a, %d %b %Y %H:%M:%S GMT"
+	signature_headers = ['(request-target)', 'accept', 'date']
+	headers = {
+		"Content-Type": "application/json",
+		"X-JMS-ORG": ORG_ID,
+		"Date": datetime.utcnow().strftime(gmt_form)
+	}
+	auth = HTTPSignatureAuth(
+		key_id=KEY_ID,
+		secret=KEY_SECRET,
+		algorithm="hmac-sha256",
+		headers=signature_headers
+	)
+	try:
+		resp = requests.get(url, auth=auth, headers=headers, timeout=10)
+		resp.raise_for_status()
+		data = resp.json()
+		print(json.dumps(data, indent=2, ensure_ascii=False))
+	except Exception as e:
+		print(f"请求失败: {e}")
+
+if __name__ == "__main__":
+	get_terminal_components_metrics()
+```
 
 - **响应示例：** 
 
