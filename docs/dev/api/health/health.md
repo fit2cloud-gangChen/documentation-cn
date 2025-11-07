@@ -1,5 +1,3 @@
-# 系统健康监控 API
-
 ## /api/v1/health/
 
 ### GET

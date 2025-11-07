@@ -1,5 +1,3 @@
-# 资产账号 API
-
 ## /api/v1/accounts/accounts/
 
 ### POST

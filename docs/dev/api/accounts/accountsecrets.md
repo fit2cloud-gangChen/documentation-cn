@@ -1,5 +1,3 @@
-# 资产账号密文 API
-
 ## /api/v1/accounts/accountsecrets/{id}/ 
 ### GET
 - **描述：**

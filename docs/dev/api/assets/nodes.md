@@ -1,5 +1,3 @@
-# 资产节点 API
-
 ## **/api/v1/assets/nodes/**
 
 ### GET

@@ -1,8 +1,6 @@
-# 资产授权 API
-
 ## /api/v1/perms/asset-permissions/
 
-=== "POST"
+### POST
 - **描述：**
 创建资产授权
 
@@ -32,7 +30,7 @@
 
 **请求示例**
 
-=== "CURL"
+**CURL**
 ```sh
 curl -X POST 'https://localhost/api/v1/perms/asset-permissions/' \
 -H 'Content-Type:application/json' \
@@ -50,7 +48,7 @@ curl -X POST 'https://localhost/api/v1/perms/asset-permissions/' \
     }'
 ```
 
-=== "Python"
+**Python**
 ```python
 # Python 示例
 
@@ -128,7 +126,7 @@ if __name__ == "__main__":
 
 ## /api/v1/perms/asset-permissions/{id}/
 
-=== "DELETE"
+### DELETE
 - **描述：**
 删除资产授权
 
@@ -148,14 +146,14 @@ if __name__ == "__main__":
 
 **请求示例**
 
-=== "CURL"
+**CURL**
 ```sh
 curl -X DELETE 'https://localhost/api/v1/perms/asset-permissions/b2c45ce6-6b9c-4270-a073-567ff0e0ade8/' \
     -H 'Content-Type:application/json' \
     -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
     -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' 
 ```
-=== "Python"
+**Python**
 ```python
 # Python 示例
 
@@ -198,7 +196,7 @@ if __name__ == "__main__":
     delete_assets_permissions()
 ```
 
-=== "PUT"
+### PUT
 - **描述：**
 更新资产授权
 
@@ -228,7 +226,7 @@ if __name__ == "__main__":
 
 **请求示例**
 
-=== "CURL"
+**CURL**
 ```sh
 curl -X PUT 'https://localhost/api/v1/perms/asset-permissions/ca90421b-bc45-48c0-bd49-4a213ff61b7c/' \
     -H 'Content-Type:application/json' \
@@ -246,7 +244,7 @@ curl -X PUT 'https://localhost/api/v1/perms/asset-permissions/ca90421b-bc45-48c0
         }'
 ```
 
-=== "Python"
+**Python**
 ```python
 # Python 示例
 

@@ -1,4 +1,3 @@
-# 终端组件监控 API
 ## /api/v1/terminal/components/metrics/
 
 ### GET
@@ -10,6 +9,7 @@
 
 | 键 (Header) | 示例值 | 说明 |
 | ----------- | ------ | ---- |
+| Authorization | `Bearer b96810faac725563304dada8c323c4fa061863d4` | 认证 Token，示例为管理员 token；格式固定为 `Bearer <token>` |
 | Content-Type | `application/json` | 请求/响应体为 JSON 格式 |
 
 - **返回参数：** 

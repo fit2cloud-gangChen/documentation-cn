@@ -1,5 +1,3 @@
-# 用户组 API
-
 ## **/api/v1/users/groups/{id}/**
 
 ### POST

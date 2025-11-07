@@ -1,5 +1,3 @@
-# 资产 API
-
 ## /api/v1/assets/hosts/
 
 ### POST
