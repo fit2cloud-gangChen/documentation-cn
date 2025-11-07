@@ -38,18 +38,31 @@ theme:
 
 nav:
   - API 文档:
-    - 认证:  dev/rest_api.md
-    - 用户:  dev/api/users/users.md
-    - 用户组: dev/api/users/usergroups.md
-    - 资产节点 : dev/api/assets/nodes.md
-    - 资产账号: dev/api/accounts/accounts.md
-    - 资产: dev/api/assets/assets.md
-    - 资产授权: dev/api/assets/authorization.md
-    - 改密计划: dev/api/accounts/changepwd.md
-    - 账号备份: dev/api/accounts/account_backup.md
-    - 工单: dev/api/ticket/ticket.md
-  - 交互命令: dev/shell.md
-
+    - 免责声明: dev/api/disclaimer.md
+    - 前言: dev/api/prologue_api.md
+    - 认证方式:
+      - 概述: dev/api/auth/auth.md
+      - Session: dev/api/auth/session.md
+      - Token: dev/api/auth/token.md
+      - Private Token: dev/api/auth/private_token.md
+      - Access Key: dev/api/auth/access_key.md
+    - users:
+      - users: dev/api/users/users.md
+      - groups: dev/api/users/usergroups.md
+    - assets:
+      - assets: dev/api/assets/assets.md
+      - nodes: dev/api/assets/nodes.md
+      - authorization: dev/api/assets/authorization.md
+    - accounts:
+      - accounts: dev/api/accounts/accounts.md
+      - accountsecrets: dev/api/accounts/accountsecrets.md
+      - account_backup: dev/api/accounts/account_backup.md
+      - change-secret-automations: dev/api/accounts/changepwd.md
+      - account-backup-plans: dev/api/accounts/account_backup.md
+    - ticket: dev/api/ticket/ticket.md
+    - health: dev/api/health/health.md
+    - terminal:
+      - metrics: dev/api/terminal/metrics.md
 
 markdown_extensions:
   - admonition

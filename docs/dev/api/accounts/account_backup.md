@@ -1,10 +1,10 @@
 ## /api/v1/accounts/account-backup-plans/
 
-=== "GET"
-    - **描述：**
-    查询账号备份策略
+### GET
+- **描述：**
+查询账号备份策略
 
-    - **请求头（Headers）：**  
+ - **请求头（Headers）：**  
 
     | 键              | 值                                      | 备注                                                                 |
     |-----------------|-----------------------------------------|----------------------------------------------------------------------|
@@ -12,7 +12,7 @@
     | X-JMS-ORG       | 00000000-0000-0000-0000-000000000002    | 00000000-0000-0000-0000-000000000002 为组织 ID，此 id号为默认组织：Default，留空则默认为 Default 组织。 |
     | Content-Type    | application/json                        | 输出为json格式                                                       |
 
-    - **请求体参数（Body）：**  
+ - **请求体参数（Body）：**  
   
     | 参数名 | 类型   | 描述           | 是否必选 | 默认值 |
     |--------|--------|----------------|----------|--------|
@@ -22,15 +22,15 @@
 
     !!! tip "请求示例"
 
-        === "CURL"
-            ```sh  
-            curl -X GET 'https://localhost/api/v1/accounts/account-backup-plans/?offset=0&limit=15' \
-                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-            ```
+        **CURL**
+        ```sh
+        curl -X GET 'https://localhost/api/v1/accounts/account-backup-plans/?offset=0&limit=15' \
+            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+        ```
 
-        === "Python"
-            ```python
+        **Python**
+        ```python
             # Python 示例
 
             import requests
@@ -79,7 +79,7 @@
                     print(f"错误:{e}")
 
             if __name__ == "__main__":
-                automations_executions()
+                search_account_backup_plans(SEARCH_WORD)
             ```
         
     - **返回参数:**
@@ -105,11 +105,11 @@
     | comment          | String            | 备注                                                                     |      |
 
 
-=== "POST"
-    - **描述：**
-    创建账号备份策略
+### POST
+- **描述：**
+创建账号备份策略
 
-    - **请求头（Headers）：**  
+ - **请求头（Headers）：**  
 
     | 键              | 值                                      | 备注                                                                 |
     |-----------------|-----------------------------------------|----------------------------------------------------------------------|
@@ -117,7 +117,7 @@
     | X-JMS-ORG       | 00000000-0000-0000-0000-000000000002    | 00000000-0000-0000-0000-000000000002 为组织 ID，此 id号为默认组织：Default，留空则默认为 Default 组织。 |
     | Content-Type    | application/json                        | 输出为json格式                                                       |
 
-    - **请求体参数（Body）：**  
+ - **请求体参数（Body）：**  
 
     | 参数名 | 类型   | 描述           | 是否必选 | 默认值 |
     |--------|--------|----------------|----------|--------|
@@ -127,28 +127,28 @@
 
     !!! tip "请求示例"
 
-        === "CURL"
-            ```sh
-            curl -X POST 'https://localhost/api/v1/accounts/account-backup-plans/' \
-                -H 'Content-Type: application/json' \
-                -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-                -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
-                -d '{
-                    "types": ["linux", "windows", "unix", "other", "general", "switch", "router", "firewall", "mysql", "mariadb",
-                    "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website"],
-                    "is_periodic": true,
-                    "interval": 24,
-                    "name": "test",
-                    "recipients": [{
-                        "pk": "d1a02c44-e40b-41ac-884a-c44f3c664209"
-                    }],
-                    "crontab": "0 0 * * *",
-                    "comment": "abcs"
-                }'
-            ```
+        **CURL**
+        ```sh
+        curl -X POST 'https://localhost/api/v1/accounts/account-backup-plans/' \
+            -H 'Content-Type: application/json' \
+            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
+            -d '{
+                "types": ["linux", "windows", "unix", "other", "general", "switch", "router", "firewall", "mysql", "mariadb",
+                "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website"],
+                "is_periodic": true,
+                "interval": 24,
+                "name": "test",
+                "recipients": [{
+                    "pk": "d1a02c44-e40b-41ac-884a-c44f3c664209"
+                }],
+                "crontab": "0 0 * * *",
+                "comment": "abcs"
+            }'
+        ```
 
-        === "Python"
-            ```python
+        **Python**
+        ```python
             # Python 示例
 
             import requests
@@ -220,7 +220,7 @@
 
 
 ## /api/v1/accounts/account-backup-plans/{id}
-=== "DELETE"
+### DELETE
 - **描述：**
 删除账号备份策略
 
@@ -240,15 +240,15 @@
 
 !!! tip "请求示例"
 
-    === "CURL"
-        ```sh
-        curl -X DELETE 'https://localhost/api/v1/accounts/account-backup-plans/37e4c30a-71ea-4b58-91f3-a692715dcf99/' \
-            -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
-            -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
-        ```
+    **CURL**
+    ```sh
+    curl -X DELETE 'https://localhost/api/v1/accounts/account-backup-plans/37e4c30a-71ea-4b58-91f3-a692715dcf99/' \
+        -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
+        -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+    ```
 
-    === "Python"
-        ```python
+    **Python**
+    ```python
         # Python 示例
 
         import requests
@@ -292,7 +292,7 @@
 
 ## /api/v1/accounts/account-backup-plan-executions/
 
-=== "POST"
+### POST
 - **描述：**
 执行账号备份策略
 
@@ -313,19 +313,19 @@
 
 !!! tip "请求示例"
 
-    === "CURL"
-        ```sh  
-        curl -X POST 'https://localhost/api/v1/accounts/account-backup-plan-executions/' \
+    **CURL**
+    ```sh
+    curl -X POST 'https://localhost/api/v1/accounts/account-backup-plan-executions/' \
         -H 'Content-Type: application/json' \
         -H 'Authorization: Bearer b96810faac725563304dada8c323c4fa061863d4' \
         -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002' \
         -d '{
             "plan": "37e4c30a-71ea-4b58-91f3-a692715dcf99"
         }'
-        ```
+    ```
 
-    === "Python"
-        ```python
+    **Python**
+    ```python
         # Python 示例
 
         import requests
