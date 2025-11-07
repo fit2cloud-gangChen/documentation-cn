@@ -14,16 +14,16 @@
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型 | 描述 | 默认值 |
-| ------------ | ------------ | ---------------------------------------------------------------------- | --------- |
-| name* | String | 名称 | - |
-| addrs* | String | IP地址 | - |
-| platform* | String | 系统平台，示例值：1（代表Linux）、5（代表Windows） | - |
-| nodes* | String[] | 节点 | - |
-| protocols | String[] | 协议/端口，参数格式示例：`{"name": "ssh", "port": 22}` | - |
-| labels | String[] | 标签 | - |
-| is_active | Boolean | 激活状态 | true |
-| accounts | String[] | 账号信息 | - |
+| 参数名 | 描述 | 默认值 |
+| --- | --- | --- |
+| name* | 类型：String，名称 | - |
+| addrs* | 类型：String，IP地址 | - |
+| platform* | 类型：String，系统平台，示例值：1（代表Linux）、5（代表Windows） | - |
+| nodes* | 类型：String[]，节点 | - |
+| protocols | 类型：String[]，协议/端口，参数格式示例：`{"name": "ssh", "port": 22}` | - |
+| labels | 类型：String[]，标签 | - |
+| is_active | 类型：Boolean，激活状态 | true |
+| accounts | 类型：String[]，账号信息 | - |
 
 
 > 注：带 * 的参数为必填项。
@@ -136,9 +136,9 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**  
 
-| 名称 | 类型   | 说明     | 必填 |
-| ---- | ------ | -------- | ---- |
-| id   | string | 资产ID   | 是   |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string，资产ID | 是 |
 
 - **请求示例**
 

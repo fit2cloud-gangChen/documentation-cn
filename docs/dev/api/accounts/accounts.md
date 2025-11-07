@@ -14,18 +14,18 @@
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型 | 描述 | 默认值 |
-| -------------- | ---------- | ---------------------------------------------------------------------- | -------------- |
-| name | String | 名称 | - |
-| username* | String | 用户名 | - |
-| secret_type* | String | 密文类型，可选值为 `password`（密码）、`ssh_key`（SSH 密钥） | password |
-| secret | String | 密钥/密码，仅在 `secret_type` 字段选用 `password` 时启用 | - |
-| passphrase | String | 密钥密码，仅在 `secret_type` 字段选用 `ssh_key` 时启用 | - |
-| comment | String | 备注 | - |
-| assets* | String[] | 资产 | - |
-| privileged | Boolean | 特权账号 | - |
-| push_now | String | 立即推送 | - |
-| is_active | Boolean | 激活 | - |
+| 参数名 | 描述 | 默认值 |
+| --- | --- | --- |
+| name | 类型：String，名称 | - |
+| username* | 类型：String，用户名 | - |
+| secret_type* | 类型：String，密文类型，可选值为 `password`（密码）、`ssh_key`（SSH 密钥） | password |
+| secret | 类型：String，密钥/密码，仅在 `secret_type` 字段选用 `password` 时启用 | - |
+| passphrase | 类型：String，密钥密码，仅在 `secret_type` 字段选用 `ssh_key` 时启用 | - |
+| comment | 类型：String，备注 | - |
+| assets* | 类型：String[]，资产 | - |
+| privileged | 类型：Boolean，特权账号 | - |
+| push_now | 类型：String，立即推送 | - |
+| is_active | 类型：Boolean，激活 | - |
 
 > 注：带 * 的参数为必填项。
 - **返回参数：**  
@@ -220,9 +220,9 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**  
 
-| 名称 | 类型   | 说明     | 必填 |
-| ---- | ------ | -------- | ---- |
-| id   | string | 资产账号 | 是   |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string，资产账号 | 是 |
 
 **请求示例**
 
@@ -291,18 +291,18 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**  
 
-| 参数名 | 类型 | 描述 | 默认值 |
-| -------------- | ---------- | ---------------------------------------------------------------------- | -------------- |
-| name | String | 名称 | - |
-| username* | String | 用户名 | - |
-| secret_type* | String | 密文类型，可选值为 `password`（密码）、`ssh_key`（SSH 密钥） | password |
-| secret | String | 密钥/密码，仅在 `secret_type` 字段选用 `password` 时启用 | - |
-| passphrase | String | 密钥密码，仅在 `secret_type` 字段选用 `ssh_key` 时启用 | - |
-| comment | String | 备注 | - |
-| assets* | String[] | 资产 | - |
-| privileged | Boolean | 特权账号 | - |
-| push_now | String | 立即推送 | - |
-| is_active | Boolean | 激活 | - |
+| 参数名 | 描述 | 默认值 |
+| --- | --- | --- |
+| name | 类型：String，名称 | - |
+| username* | 类型：String，用户名 | - |
+| secret_type* | 类型：String，密文类型，可选值为 `password`（密码）、`ssh_key`（SSH 密钥） | password |
+| secret | 类型：String，密钥/密码，仅在 `secret_type` 字段选用 `password` 时启用 | - |
+| passphrase | 类型：String，密钥密码，仅在 `secret_type` 字段选用 `ssh_key` 时启用 | - |
+| comment | 类型：String，备注 | - |
+| assets* | 类型：String[]，资产 | - |
+| privileged | 类型：Boolean，特权账号 | - |
+| push_now | 类型：String，立即推送 | - |
+| is_active | 类型：Boolean，激活 | - |
 
 > 注：带 * 的参数为必填项。
 - **返回参数：**  

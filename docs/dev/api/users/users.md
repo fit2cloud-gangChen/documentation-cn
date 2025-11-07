@@ -124,23 +124,23 @@ if __name__ == "__main__":
 
 - **请求体参数（Body）：**
 
-| 参数名 | 类型 | 描述 | 可选值 / 备注 |
-| ---------------------- | ------------------ | -------------------------- | --------------- |
-| name* | string | 名称 / 显示名称 | - |
-| username* | string | 用户名（登录名） | - |
-| email* | string | 邮箱 | - |
-| wechat | string | 微信 | - |
-| phone | string | 手机 | - |
-| groups | string[] | 用户组 ID 列表 | - |
-| password* | string | 密码（当 password_strategy=custom 时必填） | - |
-| need_update_password | boolean | 是否下次登录需修改密码 | 默认 false；[true,false] |
-| public_key | string | SSH 公钥 | - |
-| system_roles* | object[]/string[] | 系统角色 | 元素含 pk ID |
-| org_roles* | object[]/string[] | 组织角色 | 元素含 pk ID |
-| password_strategy | string | 密码策略 | email / custom；email=邮件设置密码 |
-| source | string | 用户来源 | 默认 default；local/ldap/openid/radius/cas/saml2/oauth2/custom |
-| mfa_level | integer | MFA 等级 | 0=禁用 1=启用 2=强制 |
-| date_expired | string(date-time) | 用户失效时间 | 例如：2023-02-04T00:54:39.000Z |
+| 参数名 | 描述 | 可选值 / 备注 |
+| --- | --- | --- |
+| name* | 类型：string，名称 / 显示名称 | - |
+| username* | 类型：string，用户名（登录名） | - |
+| email* | 类型：string，邮箱 | - |
+| wechat | 类型：string，微信 | - |
+| phone | 类型：string，手机 | - |
+| groups | 类型：string[]，用户组 ID 列表 | - |
+| password* | 类型：string，密码（当 password_strategy=custom 时必填） | - |
+| need_update_password | 类型：boolean，是否下次登录需修改密码 | 默认 false；[true,false] |
+| public_key | 类型：string，SSH 公钥 | - |
+| system_roles* | 类型：object[]/string[]，系统角色 | 元素含 pk ID |
+| org_roles* | 类型：object[]/string[]，组织角色 | 元素含 pk ID |
+| password_strategy | 类型：string，密码策略 | email / custom；email=邮件设置密码 |
+| source | 类型：string，用户来源 | 默认 default；local/ldap/openid/radius/cas/saml2/oauth2/custom |
+| mfa_level | 类型：integer，MFA 等级 | 0=禁用 1=启用 2=强制 |
+| date_expired | 类型：string(date-time)，用户失效时间 | 例如：2023-02-04T00:54:39.000Z |
 
 > 注：带 * 的参数为必填项。
 - **返回参数：** （创建成功返回完整用户对象，与 GET 列表中单个元素结构一致）
@@ -281,9 +281,9 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**
 
-| 名称 | 类型 | 说明 | 必填 |
-| ---- | ---- | ---- | ---- |
-| id | string(UUID) | 用户 ID | 是 |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string(UUID)，用户 ID | 是 |
 
 - **返回参数：**（结构与创建/列表单个元素一致）
 
@@ -393,29 +393,29 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**
 
-| 名称 | 类型 | 说明 | 必填 |
-| ---- | ---- | ---- | ---- |
-| id | string(UUID) | 用户 ID | 是 |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string(UUID)，用户 ID | 是 |
 
 - **请求体参数（Body）：**
 
-| 参数名 | 类型 | 描述 | 可选值 / 备注 |
-| ------- | ------ | ------ | --------------- |
-| name* | string | 名称 / 显示名称 | - |
-| username* | string | 用户名（登录名） | - |
-| email* | string | 邮箱 | - |
-| wechat | string | 微信 | - |
-| phone | string | 手机 | - |
-| groups | string[] | 用户组 ID 列表 | - |
-| password | string | 密码 | password_strategy=custom 时必填 |
-| need_update_password | boolean | 下次登录需改密 | 默认 false |
-| public_key | string | SSH 公钥 | - |
-| system_roles* | object[]/string[] | 系统角色 | 元素含 pk |
-| org_roles* | object[]/string[] | 组织角色 | 元素含 pk |
-| password_strategy | string | 密码策略 | email / custom |
-| source | string | 用户来源 | default/local/ldap/... |
-| mfa_level | integer | MFA 等级 | 0=禁用 1=启用 2=强制 |
-| date_expired | string(date-time) | 用户失效时间 | 2023-02-04T00:54:39.000Z |
+| 参数名 | 描述 | 可选值 / 备注 |
+| --- | --- | --- |
+| name* | 类型：string，名称 / 显示名称 | - |
+| username* | 类型：string，用户名（登录名） | - |
+| email* | 类型：string，邮箱 | - |
+| wechat | 类型：string，微信 | - |
+| phone | 类型：string，手机 | - |
+| groups | 类型：string[]，用户组 ID 列表 | - |
+| password | 类型：string，密码 | password_strategy=custom 时必填 |
+| need_update_password | 类型：boolean，下次登录需改密 | 默认 false |
+| public_key | 类型：string，SSH 公钥 | - |
+| system_roles* | 类型：object[]/string[]，系统角色 | 元素含 pk |
+| org_roles* | 类型：object[]/string[]，组织角色 | 元素含 pk |
+| password_strategy | 类型：string，密码策略 | email / custom |
+| source | 类型：string，用户来源 | default/local/ldap/... |
+| mfa_level | 类型：integer，MFA 等级 | 0=禁用 1=启用 2=强制 |
+| date_expired | 类型：string(date-time)，用户失效时间 | 2023-02-04T00:54:39.000Z |
 
 > 注：带 * 的参数为必填项。
 - **返回参数：**
@@ -555,28 +555,28 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**
 
-| 名称 | 类型 | 说明 | 必填 |
-| ---- | ---- | ---- | ---- |
-| id | string(UUID) | 用户 ID | 是 |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string(UUID)，用户 ID | 是 |
 
 - **请求体（Body 可选字段）：**
 
-| 参数名 | 类型 | 描述 | 备注 |
-|-------|------|------|------|
-| name | string | 名称 | 选填 |
-| email | string | 邮箱 | 选填 |
-| wechat | string | 微信 | 选填 |
-| phone | string | 手机 | 选填 |
-| groups | string[] | 用户组 ID 列表 | 全量替换该列表 |
-| password | string | 新密码 | password_strategy=custom 时使用 |
-| need_update_password | boolean | 下次登录需改密 |  |
-| public_key | string | SSH 公钥 |  |
-| system_roles | object[]/string[] | 系统角色 | 全量替换 |
-| org_roles | object[]/string[] | 组织角色 | 全量替换 |
-| password_strategy | string | 密码策略 | email/custom |
-| source | string | 用户来源 |  |
-| mfa_level | integer | MFA 等级 | 0/1/2 |
-| date_expired | string(date-time) | 用户失效时间 |  |
+| 参数名 | 描述 | 备注 |
+| --- | --- | --- |
+| name | 类型：string，名称 | 选填 |
+| email | 类型：string，邮箱 | 选填 |
+| wechat | 类型：string，微信 | 选填 |
+| phone | 类型：string，手机 | 选填 |
+| groups | 类型：string[]，用户组 ID 列表 | 全量替换该列表 |
+| password | 类型：string，新密码 | password_strategy=custom 时使用 |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| public_key | 类型：string，SSH 公钥 |  |
+| system_roles | 类型：object[]/string[]，系统角色 | 全量替换 |
+| org_roles | 类型：object[]/string[]，组织角色 | 全量替换 |
+| password_strategy | 类型：string，密码策略 | email/custom |
+| source | 类型：string，用户来源 |  |
+| mfa_level | 类型：integer，MFA 等级 | 0/1/2 |
+| date_expired | 类型：string(date-time)，用户失效时间 |  |
 
 - **返回参数：**
 
@@ -691,9 +691,9 @@ if __name__ == "__main__":
 
 - **路径参数（Path Params）：**
 
-| 名称 | 类型 | 说明 | 必填 |
-| ---- | ---- | ---- | ---- |
-| id | string(UUID) | 用户 ID | 是 |
+| 名称 | 说明 | 必填 |
+| --- | --- | --- |
+| id | 类型：string(UUID)，用户 ID | 是 |
 
 - **返回：** 204 No Content（删除成功无响应体）
 
