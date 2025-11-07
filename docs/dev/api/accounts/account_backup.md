@@ -23,25 +23,25 @@
 > 注：带 * 的参数为必填项。
 - **返回参数:**
 
-| 字段名称         | 数据类型          | 字段描述                                                                 | 备注 |
-|------------------|-------------------|--------------------------------------------------------------------------|------|
-| count            | Int               | 总数                                                                     |      |
-| next             | String            | 下一页链接                                                               |      |
-| previous         | String            | 上一页链接                                                               |      |
-| results          | List              | 用户数据                                                                 |      |
-| id               | String            | 备份策略ID                                                               |      |
-| name             | String            | 名称                                                                     |      |
-| org_id           | String            | 组织ID                                                                   |      |
-| org_name         | String            | 组织名                                                                   |      |
-| is_periodic      | Boolean           | 是否定时执行                                                             |      |
-| interval         | Int               | 周期执行                                                                 |      |
-| crontab          | String            | 定时执行Crontab表达式                                                    |      |
-| recipients       | List[Object]      | 收件人                                                                   |      |
-| types            | String[]          | 资产类型                                                                 | linux, windows, unix, other, general, switch, "router", "firewall", "mysql", "mariadb", "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website" |
-| date_created     | String[date]      | 创建时间                                                                 |      |
-| date_updated     | String[date]      | 更新时间                                                                 |      |
-| created_by       | String            | 创建人                                                                   |      |
-| comment          | String            | 备注                                                                     |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| count | 类型：Int，总数 |  |
+| next | 类型：String，下一页链接 |  |
+| previous | 类型：String，上一页链接 |  |
+| results | 类型：List，用户数据 |  |
+| id | 类型：String，备份策略ID |  |
+| name | 类型：String，名称 |  |
+| org_id | 类型：String，组织ID |  |
+| org_name | 类型：String，组织名 |  |
+| is_periodic | 类型：Boolean，是否定时执行 |  |
+| interval | 类型：Int，周期执行 |  |
+| crontab | 类型：String，定时执行Crontab表达式 |  |
+| recipients | 类型：List[Object]，收件人 |  |
+| types | 类型：String[]，资产类型 | linux, windows, unix, other, general, switch, "router", "firewall", "mysql", "mariadb", "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website" |
+| date_created | 类型：String[date]，创建时间 |  |
+| date_updated | 类型：String[date]，更新时间 |  |
+| created_by | 类型：String，创建人 |  |
+| comment | 类型：String，备注 |  |
 
 - **请求示例**
 
@@ -131,21 +131,21 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数:**
 
-| 字段名称         | 数据类型          | 字段描述                                                                 | 备注 |
-|------------------|-------------------|--------------------------------------------------------------------------|------|
-| id               | String            | 备份策略ID                                                               |      |
-| name             | String            | 名称                                                                     |      |
-| org_id           | String            | 组织ID                                                                   |      |
-| org_name         | String            | 组织名                                                                   |      |
-| is_periodic      | Boolean           | 是否定时执行                                                             |      |
-| interval         | Int               | 周期执行                                                                 | 默认24 |
-| crontab          | String            | 定时执行Crontab表达式                                                    |      |
-| recipients       | List[Object]      | 收件人                                                                   |      |
-| types            | String[]          | 资产类型                                                                 | linux, windows, unix, other, general, switch, "router", "firewall", "mysql", "mariadb", "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website" |
-| date_created     | String[date]      | 创建时间                                                                 |      |
-| date_updated     | String[date]      | 更新时间                                                                 |      |
-| created_by       | String            | 创建人                                                                   |      |
-| comment          | String            | 备注                                                                     |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，备份策略ID |  |
+| name | 类型：String，名称 |  |
+| org_id | 类型：String，组织ID |  |
+| org_name | 类型：String，组织名 |  |
+| is_periodic | 类型：Boolean，是否定时执行 |  |
+| interval | 类型：Int，周期执行 | 默认24 |
+| crontab | 类型：String，定时执行Crontab表达式 |  |
+| recipients | 类型：List[Object]，收件人 |  |
+| types | 类型：String[]，资产类型 | linux, windows, unix, other, general, switch, "router", "firewall", "mysql", "mariadb", "postgresql", "oracle", "sqlserver", "clickhouse", "mongodb", "redis", "public", "private", "k8s", "website" |
+| date_created | 类型：String[date]，创建时间 |  |
+| date_updated | 类型：String[date]，更新时间 |  |
+| created_by | 类型：String，创建人 |  |
+| comment | 类型：String，备注 |  |
 
 
 - **请求示例**
@@ -320,9 +320,9 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-|----------|----------|----------|------|
-| task     | String   | 任务id   |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| task | 类型：String，任务id |  |
 
 **请求示例**
 

@@ -30,26 +30,26 @@
 > 注：带 * 的参数为必填项。
 - **返回参数:**
 
-| 字段名称               | 数据类型          | 字段描述               | 备注 |
-|------------------------|-------------------|------------------------|------|
-| id                     | String            | id                     |      |
-| title                  | String            | 标题                   |      |
-| org_id                 | String            | 组织                   |      |
-| comment                | String            | 备注                   |      |
-| type                   | String            | 类型                   |      |
-| apply_nodes            | String[]          | 申请节点               |      |
-| apply_assets           | String[]          | 申请资产               |      |
-| apply_accounts         | String[]          | 申请账号               |      |
-| apply_actions          | String[]          | 申请动作               |      |
-| serial_num             | String            | 序列号                 |      |
-| approval_step          | String            | 流程步骤               |      |
-| state                  | String            | 工单动作               |      |
-| status                 | String            | 工单状态               |      |
-| applicant              | String            | 申请人                 |      |
-| org_name               | String            | 组织名称               |      |
-| apply_permission_name  | String            | 工单授权名称           |      |
-| apply_date_start       | String(date-time) | 申请开始时间           |      |
-| apply_date_expired     | String(date-time) | 申请结束时间           |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| title | 类型：String，标题 |  |
+| org_id | 类型：String，组织 |  |
+| comment | 类型：String，备注 |  |
+| type | 类型：String，类型 |  |
+| apply_nodes | 类型：String[]，申请节点 |  |
+| apply_assets | 类型：String[]，申请资产 |  |
+| apply_accounts | 类型：String[]，申请账号 |  |
+| apply_actions | 类型：String[]，申请动作 |  |
+| serial_num | 类型：String，序列号 |  |
+| approval_step | 类型：String，流程步骤 |  |
+| state | 类型：String，工单动作 |  |
+| status | 类型：String，工单状态 |  |
+| applicant | 类型：String，申请人 |  |
+| org_name | 类型：String，组织名称 |  |
+| apply_permission_name | 类型：String，工单授权名称 |  |
+| apply_date_start | 类型：String(date-time)，申请开始时间 |  |
+| apply_date_expired | 类型：String(date-time)，申请结束时间 |  |
 
 
 - **请求示例：**
@@ -147,20 +147,20 @@ if __name__ == "__main__":
 
 - **返回参数：**
 
-| 字段名称       | 数据类型          | 字段描述       | 备注 |
-|----------------|-------------------|----------------|------|
-| id             | String            | id             |      |
-| title          | String            | 标题           |      |
-| org_id         | String            | 组织           |      |
-| serial_num     | String            | 编号           |      |
-| approval_step  | String            | 工单审批步骤   |      |
-| type           | String            | 类型           |      |
-| state          | String            | 动作           |      |
-| applicant      | String            | 申请人         |      |
-| status         | String            | 状态           |      |
-| org_name       | String            | 组织名称       |      |
-| date_created   | String(date-time) | 创建时间       |      |
-| date_update    | String(date-time) | 更新时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| title | 类型：String，标题 |  |
+| org_id | 类型：String，组织 |  |
+| serial_num | 类型：String，编号 |  |
+| approval_step | 类型：String，工单审批步骤 |  |
+| type | 类型：String，类型 |  |
+| state | 类型：String，动作 |  |
+| applicant | 类型：String，申请人 |  |
+| status | 类型：String，状态 |  |
+| org_name | 类型：String，组织名称 |  |
+| date_created | 类型：String(date-time)，创建时间 |  |
+| date_update | 类型：String(date-time)，更新时间 |  |
 
 
 - **请求示例**
@@ -408,20 +408,20 @@ if __name__ == "__main__":
 
 - **返回参数：**
 
-| 字段名称         | 数据类型          | 字段描述       | 备注 |
-|------------------|-------------------|----------------|------|
-| id               | String            | id             |      |
-| type             | Object            | 流程类型       |      |
-| org_id           | String            | 组织           |      |
-| org_name         | String            | 组织名称       |      |
-| approval_level   | int               | 审批级别       |      |
-| rules            | Array             | 审批流程       |      |
-| level            | int               | 流程级别       |      |
-| strategy         | Object            | 审批角色       |      |
-| assignees_display| Array             | 审批人名称     |      |
-| created_by       | String            | 创建人         |      |
-| date_created     | String(date-time) | 创建时间       |      |
-| date_update      | String(date-time) | 更新时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| type | 类型：Object，流程类型 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
+| approval_level | 类型：int，审批级别 |  |
+| rules | 类型：Array，审批流程 |  |
+| level | 类型：int，流程级别 |  |
+| strategy | 类型：Object，审批角色 |  |
+| assignees_display | 类型：Array，审批人名称 |  |
+| created_by | 类型：String，创建人 |  |
+| date_created | 类型：String(date-time)，创建时间 |  |
+| date_update | 类型：String(date-time)，更新时间 |  |
 
 
 ## /api/v1/tickets/flows/{flowId}/
@@ -532,17 +532,17 @@ if __name__ == "__main__":
 
 - **返回参数:**
 
-| 字段名称         | 数据类型          | 字段描述       | 备注 |
-|------------------|-------------------|----------------|------|
-| id               | String            | id             |      |
-| type             | Object            | 流程类型       |      |
-| org_id           | String            | 组织           |      |
-| org_name         | String            | 组织名称       |      |
-| approval_level   | int               | 审批级别       |      |
-| rules            | Array             | 审批流程       |      |
-| level            | int               | 流程级别       |      |
-| strategy         | object            | 审批角色       |      |
-| assignees_display| Array             | 审批人名称     |      |
-| created_by       | String            | 创建人         |      |
-| date_created     | String(date-time) | 创建时间       |      |
-| date_update      | String(date-time) | 更新时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| type | 类型：Object，流程类型 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
+| approval_level | 类型：int，审批级别 |  |
+| rules | 类型：Array，审批流程 |  |
+| level | 类型：int，流程级别 |  |
+| strategy | 类型：object，审批角色 |  |
+| assignees_display | 类型：Array，审批人名称 |  |
+| created_by | 类型：String，创建人 |  |
+| date_created | 类型：String(date-time)，创建时间 |  |
+| date_update | 类型：String(date-time)，更新时间 |  |

@@ -14,15 +14,15 @@
 
 - **返回参数：** 
 
-| 字段 | 类型 | 说明 |
-| ---- | ---- | ---- |
-| total | integer | 该类型组件总数量 |
-| type | string | 组件类型标识，如 `core`, `lion`, `koko`, `celery`, `video_worker` 等 |
-| session_active | integer | 当前活跃会话数（与会话相关组件可能为 0） |
-| high | array[string] | 高风险 / 需关注状态的实例主机名列表（可能为空） |
-| normal | array[string] | 正常状态实例主机名列表 |
-| offline | array[string] | 离线实例主机名列表 |
-| critical | array[string] | 严重异常实例主机名列表 |
+| 字段 | 说明 |
+| --- | --- |
+| total | 类型：integer，该类型组件总数量 |
+| type | 类型：string，组件类型标识，如 `core`, `lion`, `koko`, `celery`, `video_worker` 等 |
+| session_active | 类型：integer，当前活跃会话数（与会话相关组件可能为 0） |
+| high | 类型：array[string]，高风险 / 需关注状态的实例主机名列表（可能为空） |
+| normal | 类型：array[string]，正常状态实例主机名列表 |
+| offline | 类型：array[string]，离线实例主机名列表 |
+| critical | 类型：array[string]，严重异常实例主机名列表 |
 
 - **响应示例：** 
 

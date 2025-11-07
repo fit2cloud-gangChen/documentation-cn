@@ -23,15 +23,15 @@
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-| -------- | -------- | -------- | ---- |
-| id | String | 节点id |  |
-| key | String | 键 |  |
-| value | String | 值\节点名称 |  |
-| org_id | String | 组织 |  |
-| name | String[] | 用户 |  |
-| full_value | String | 全称 |  |
-| org_name | String | 组织名称 |  |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，节点id |  |
+| key | 类型：String，键 |  |
+| value | 类型：String，值\节点名称 |  |
+| org_id | 类型：String，组织 |  |
+| name | 类型：String[]，用户 |  |
+| full_value | 类型：String，全称 |  |
+| org_name | 类型：String，组织名称 |  |
 
 **请求示例**
 
@@ -138,15 +138,15 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称   | 数据类型   | 字段描述       | 备注 |
-|------------|------------|----------------|------|
-| id         | String     | 节点id         |      |
-| key        | String     | 键             |      |
-| value      | String     | 值\节点名称    |      |
-| org_id     | String     | 组织           |      |
-| name       | String[]   | 用户           |      |
-| full_value | String     | 全称           |      |
-| org_name   | String     | 组织名称       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，节点id |  |
+| key | 类型：String，键 |  |
+| value | 类型：String，值\节点名称 |  |
+| org_id | 类型：String，组织 |  |
+| name | 类型：String[]，用户 |  |
+| full_value | 类型：String，全称 |  |
+| org_name | 类型：String，组织名称 |  |
 
 **请求示例**
 

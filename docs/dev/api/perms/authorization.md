@@ -107,22 +107,22 @@ if __name__ == "__main__":
 
 - **返回参数：**  
 
-| 字段名称         | 数据类型          | 字段描述               | 备注 |
-|------------------|-------------------|------------------------|------|
-| id               | String            | id                     |      |
-| name             | String            | 名称                   |      |
-| users            | String[]          | 用户                   |      |
-| users_groups     | String[]          | 用户组                 |      |
-| assets           | String[]          | 资产                   |      |
-| nodes            | String[]          | 节点                   |      |
-| accounts         | String[]          | 授权账号               |      |
-| actions          | String[]          | 动作                   |      |
-| is_active        | Boolean           | 激活中                 |      |
-| created_by       | String            | 创建者                 |      |
-| comment          | String            | 备注                   |      |
-| date_created     | String(date-time) | 授权规则创建时间       |      |
-| date_start       | String(date-time) | 授权规则开始时间       |      |
-| date_expired     | String(date-time) | 授权规则失效时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| users | 类型：String[]，用户 |  |
+| users_groups | 类型：String[]，用户组 |  |
+| assets | 类型：String[]，资产 |  |
+| nodes | 类型：String[]，节点 |  |
+| accounts | 类型：String[]，授权账号 |  |
+| actions | 类型：String[]，动作 |  |
+| is_active | 类型：Boolean，激活中 |  |
+| created_by | 类型：String，创建者 |  |
+| comment | 类型：String，备注 |  |
+| date_created | 类型：String(date-time)，授权规则创建时间 |  |
+| date_start | 类型：String(date-time)，授权规则开始时间 |  |
+| date_expired | 类型：String(date-time)，授权规则失效时间 |  |
 
 
 ## /api/v1/perms/asset-permissions/{id}/
@@ -305,19 +305,19 @@ if __name__ == "__main__":
 
 - **返回参数：**
 
-| 字段名称         | 数据类型          | 字段描述               | 备注 |
-|------------------|-------------------|------------------------|------|
-| id               | String            | id                     |      |
-| name             | String            | 名称                   |      |
-| users            | String[]          | 用户                   |      |
-| users_groups     | String[]          | 用户组                 |      |
-| assets           | String[]          | 资产                   |      |
-| nodes            | String[]          | 节点                   |      |
-| accounts         | String[]          | 授权账号               |      |
-| actions          | String[]          | 动作                   |      |
-| is_active        | Boolean           | 激活中                 |      |
-| created_by       | String            | 创建者                 |      |
-| comment          | String            | 备注                   |      |
-| date_created     | String(date-time) | 授权规则创建时间       |      |
-| date_start       | String(date-time) | 授权规则开始时间       |      |
-| date_expired     | String(date-time) | 授权规则失效时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| users | 类型：String[]，用户 |  |
+| users_groups | 类型：String[]，用户组 |  |
+| assets | 类型：String[]，资产 |  |
+| nodes | 类型：String[]，节点 |  |
+| accounts | 类型：String[]，授权账号 |  |
+| actions | 类型：String[]，动作 |  |
+| is_active | 类型：Boolean，激活中 |  |
+| created_by | 类型：String，创建者 |  |
+| comment | 类型：String，备注 |  |
+| date_created | 类型：String(date-time)，授权规则创建时间 |  |
+| date_start | 类型：String(date-time)，授权规则开始时间 |  |
+| date_expired | 类型：String(date-time)，授权规则失效时间 |  |

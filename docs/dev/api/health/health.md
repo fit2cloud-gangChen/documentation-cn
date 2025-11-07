@@ -11,14 +11,14 @@
 
 - **返回参数：**
 
-| 字段 | 类型 | 描述 | 备注 |
-|------|------|------|------|
-| status | Boolean | 服务总体可用状态 | true=可用 |
-| db_status | Boolean | 数据库可用状态 | true=正常 |
-| db_time | Float | 数据库探测耗时 (秒) | 精度为秒的小数 |
-| redis_status | Boolean | Redis 可用状态 | true=正常 |
-| redis_time | Float | Redis 探测耗时 (秒) | 精度为秒的小数 |
-| time | Int | 服务器当前时间 (Unix 时间戳, 秒) | 可用于时钟漂移检测 |
+| 字段 | 描述 | 备注 |
+| --- | --- | --- |
+| status | 类型：Boolean，服务总体可用状态 | true=可用 |
+| db_status | 类型：Boolean，数据库可用状态 | true=正常 |
+| db_time | 类型：Float，数据库探测耗时 (秒) | 精度为秒的小数 |
+| redis_status | 类型：Boolean，Redis 可用状态 | true=正常 |
+| redis_time | 类型：Float，Redis 探测耗时 (秒) | 精度为秒的小数 |
+| time | 类型：Int，服务器当前时间 (Unix 时间戳, 秒) | 可用于时钟漂移检测 |
 
 
 - **响应示例**

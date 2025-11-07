@@ -29,23 +29,23 @@
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称       | 数据类型          | 字段描述       | 备注 |
-|----------------|-------------------|----------------|------|
-| id             | String            | id             |      |
-| name           | String            | 名称           |      |
-| addrs          | String            | ip             |      |
-| comment        | String            | 备注           |      |
-| platform       | String            | 系统平台       |      |
-| nodes          | String[]          | 节点           |      |
-| labels         | String[]          | 标签           |      |
-| protocols      | String            | 协议/端口      |      |
-| nodes_display  | String[]          | 资产节点名称   |      |
-| category       | String            | 类别           |      |
-| type           | String            | 类型           |      |
-| is_active      | Boolean           | 激活状态       |      |
-| date_created   | String(date-time) | 创建时间       |      |
-| org_id         | String            | 组织           |      |
-| org_name       | String            | 组织名称       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| addrs | 类型：String，ip |  |
+| comment | 类型：String，备注 |  |
+| platform | 类型：String，系统平台 |  |
+| nodes | 类型：String[]，节点 |  |
+| labels | 类型：String[]，标签 |  |
+| protocols | 类型：String，协议/端口 |  |
+| nodes_display | 类型：String[]，资产节点名称 |  |
+| category | 类型：String，类别 |  |
+| type | 类型：String，类型 |  |
+| is_active | 类型：Boolean，激活状态 |  |
+| date_created | 类型：String(date-time)，创建时间 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
 
 
 - **请求示例**

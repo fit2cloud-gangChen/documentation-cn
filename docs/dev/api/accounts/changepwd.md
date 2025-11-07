@@ -76,32 +76,32 @@ if __name__ == "__main__":
 
 - **返回参数:**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-|----------|----------|----------|------|
-| count | Int | 总数 | |
-| next | String | 下一页链接 | |
-| previous | String | 上一页链接 | |
-| results | List | 数据 | |
-| id | String | id | |
-| name | String | 名称 | |
-| accounts | String[] | 资产账户名 | |
-| assets | List[Object] | 资产ID | |
-| nodes | List[Object] | 资产节点 | |
-| is_active | Boolean | 是否激活 | |
-| is_periodic | Boolean | 是否定期执行 | |
-| crontab | String | 定期执行crontab表达式 | |
-| interval | String | 周期执行 | |
-| secret_strategy | String | 密文生成策略 | |
-| secret_type | Object | 密文类型 | |
-| secret | String | 密码 | |
-| password_rules | Object | 随机密码长度 | |
-| recipients | List[Object] | 收件人 | |
-| org_id | String | 组织ID | |
-| org_name | String | 组织名称 | |
-| comment | String | 备注 | |
-| date_created | String[date] | 创建时间 | |
-| date_updated | String[date] | 更新时间 | |
-| created_by | String | 创建人 | |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| count | 类型：Int，总数 |  |
+| next | 类型：String，下一页链接 |  |
+| previous | 类型：String，上一页链接 |  |
+| results | 类型：List，数据 |  |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| accounts | 类型：String[]，资产账户名 |  |
+| assets | 类型：List[Object]，资产ID |  |
+| nodes | 类型：List[Object]，资产节点 |  |
+| is_active | 类型：Boolean，是否激活 |  |
+| is_periodic | 类型：Boolean，是否定期执行 |  |
+| crontab | 类型：String，定期执行crontab表达式 |  |
+| interval | 类型：String，周期执行 |  |
+| secret_strategy | 类型：String，密文生成策略 |  |
+| secret_type | 类型：Object，密文类型 |  |
+| secret | 类型：String，密码 |  |
+| password_rules | 类型：Object，随机密码长度 |  |
+| recipients | 类型：List[Object]，收件人 |  |
+| org_id | 类型：String，组织ID |  |
+| org_name | 类型：String，组织名称 |  |
+| comment | 类型：String，备注 |  |
+| date_created | 类型：String[date]，创建时间 |  |
+| date_updated | 类型：String[date]，更新时间 |  |
+| created_by | 类型：String，创建人 |  |
 
 
 ### POST
@@ -201,28 +201,28 @@ if __name__ == "__main__":
 
 - **返回参数:**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-|----------|----------|----------|------|
-| id | String | id | |
-| name | String | 名称 | |
-| accounts | String[] | 资产账户名 | |
-| assets | List[Object] | 资产ID | |
-| nodes | List[Object] | 资产节点 | |
-| is_active | Boolean | 是否激活 | |
-| is_periodic | Boolean | 是否定期执行 | |
-| crontab | String | 定期执行crontab表达式 | |
-| interval | String | 周期执行 | |
-| secret_strategy | String | 密文生成策略 | |
-| secret_type | Object | 密文类型 | |
-| secret | String | 密码 | |
-| password_rules | Object | 随机密码长度 | |
-| recipients | List[Object] | 收件人 | |
-| org_id | String | 组织ID | |
-| org_name | String | 组织名称 | |
-| comment | String | 备注 | |
-| date_created | String[date] | 创建时间 | |
-| date_updated | String[date] | 更新时间 | |
-| created_by | String | 创建人 | |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| accounts | 类型：String[]，资产账户名 |  |
+| assets | 类型：List[Object]，资产ID |  |
+| nodes | 类型：List[Object]，资产节点 |  |
+| is_active | 类型：Boolean，是否激活 |  |
+| is_periodic | 类型：Boolean，是否定期执行 |  |
+| crontab | 类型：String，定期执行crontab表达式 |  |
+| interval | 类型：String，周期执行 |  |
+| secret_strategy | 类型：String，密文生成策略 |  |
+| secret_type | 类型：Object，密文类型 |  |
+| secret | 类型：String，密码 |  |
+| password_rules | 类型：Object，随机密码长度 |  |
+| recipients | 类型：List[Object]，收件人 |  |
+| org_id | 类型：String，组织ID |  |
+| org_name | 类型：String，组织名称 |  |
+| comment | 类型：String，备注 |  |
+| date_created | 类型：String[date]，创建时间 |  |
+| date_updated | 类型：String[date]，更新时间 |  |
+| created_by | 类型：String，创建人 |  |
 
 
 ## /api/v1/accounts/change-secret-automations/{id}/
@@ -344,28 +344,28 @@ if __name__ == "__main__":
 
 - **返回参数:**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-|----------|----------|----------|------|
-| id | String | id | |
-| name | String | 名称 | |
-| accounts | String[] | 资产账户名 | |
-| assets | List[Object] | 资产ID | |
-| nodes | List[Object] | 资产节点 | |
-| is_active | Boolean | 是否激活 | |
-| is_periodic | Boolean | 是否定期执行 | |
-| crontab | String | 定期执行crontab表达式 | |
-| interval | String | 周期执行 | |
-| secret_strategy | String | 密文生成策略 | |
-| secret_type | Object | 密文类型 | |
-| secret | String | 密码 | |
-| password_rules | Object | 随机密码长度 | |
-| recipients | List[Object] | 收件人 | |
-| org_id | String | 组织ID | |
-| org_name | String | 组织名称 | |
-| comment | String | 备注 | |
-| date_created | String[date] | 创建时间 | |
-| date_updated | String[date] | 更新时间 | |
-| created_by | String | 创建人 | |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| accounts | 类型：String[]，资产账户名 |  |
+| assets | 类型：List[Object]，资产ID |  |
+| nodes | 类型：List[Object]，资产节点 |  |
+| is_active | 类型：Boolean，是否激活 |  |
+| is_periodic | 类型：Boolean，是否定期执行 |  |
+| crontab | 类型：String，定期执行crontab表达式 |  |
+| interval | 类型：String，周期执行 |  |
+| secret_strategy | 类型：String，密文生成策略 |  |
+| secret_type | 类型：Object，密文类型 |  |
+| secret | 类型：String，密码 |  |
+| password_rules | 类型：Object，随机密码长度 |  |
+| recipients | 类型：List[Object]，收件人 |  |
+| org_id | 类型：String，组织ID |  |
+| org_name | 类型：String，组织名称 |  |
+| comment | 类型：String，备注 |  |
+| date_created | 类型：String[date]，创建时间 |  |
+| date_updated | 类型：String[date]，更新时间 |  |
+| created_by | 类型：String，创建人 |  |
 
 ### DELETE
 - **描述：**
@@ -525,6 +525,6 @@ if __name__ == "__main__":
 
 - **返回参数:**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-|----------|----------|----------|------|
-| task | String | 任务id | |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| task | 类型：String，任务id |  |

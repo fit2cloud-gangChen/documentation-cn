@@ -30,23 +30,23 @@
 > 注：带 * 的参数为必填项。
 - **返回参数：**  
 
-| 字段名称       | 数据类型 | 字段描述   | 备注 |
-|----------------|----------|------------|------|
-| id             | String   | id         |      |
-| name           | String   | 名称       |      |
-| username       | String   | 用户名     |      |
-| secret_type    | String   | 密码类型   |      |
-| created_by     | String   | 创建者     |      |
-| comment        | String   | 备注       |      |
-| su_from        | String   | sudo用户   |      |
-| asset          | String   | 资产薪资   |      |
-| source         | String   | 来源       |      |
-| connectivity   | String   | 连通性     |      |
-| org_id         | String   | 组织       |      |
-| org_name       | String   | 组织名称   |      |
-| has_secret     | Boolean  | 是否有密码 |      |
-| privileged     | Boolean  | 是否有特权账号 |    |
-| is_active      | Boolean  | 激活       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| username | 类型：String，用户名 |  |
+| secret_type | 类型：String，密码类型 |  |
+| created_by | 类型：String，创建者 |  |
+| comment | 类型：String，备注 |  |
+| su_from | 类型：String，sudo用户 |  |
+| asset | 类型：String，资产薪资 |  |
+| source | 类型：String，来源 |  |
+| connectivity | 类型：String，连通性 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
+| has_secret | 类型：Boolean，是否有密码 |  |
+| privileged | 类型：Boolean，是否有特权账号 |  |
+| is_active | 类型：Boolean，激活 |  |
 
 **请求示例**
 
@@ -126,20 +126,20 @@ if __name__ == "__main__":
 
 - **返回参数：**  
 
-| 字段名称       | 数据类型          | 字段描述       | 备注 |
-|----------------|-------------------|----------------|------|
-| asset          | Object            | 资产           |      |
-| connectivity   | String            | 可连接性       |      |
-| id             | String            | id             |      |
-| name           | String            | 名称           |      |
-| privileged     | Boolean           | 是否特权账号   |      |
-| username       | String            | 账号名         |      |
-| secret         | String            | 密码           |      |
-| secret_type    | Object            | 密文类型       |      |
-| source         | String            | 来源           |      |
-| is_active      | Boolean           | 激活中         |      |
-| created_by     | String            | 创建者         |      |
-| date_created   | String(date-time) | 创建时间       |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| asset | 类型：Object，资产 |  |
+| connectivity | 类型：String，可连接性 |  |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| privileged | 类型：Boolean，是否特权账号 |  |
+| username | 类型：String，账号名 |  |
+| secret | 类型：String，密码 |  |
+| secret_type | 类型：Object，密文类型 |  |
+| source | 类型：String，来源 |  |
+| is_active | 类型：Boolean，激活中 |  |
+| created_by | 类型：String，创建者 |  |
+| date_created | 类型：String(date-time)，创建时间 |  |
 
 **请求示例**
 
@@ -307,23 +307,23 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数：**  
 
-| 字段名称       | 数据类型 | 字段描述     | 备注 |
-|----------------|----------|--------------|------|
-| id             | String   | id           |      |
-| name           | String   | 名称         |      |
-| username       | String   | 用户名       |      |
-| secret_type    | String   | 密码类型     |      |
-| created_by     | String   | 创建者       |      |
-| comment        | String   | 备注         |      |
-| su_from        | String   | sudo用户     |      |
-| asset          | String   | 资产薪资     |      |
-| source         | String   | 来源         |      |
-| connectivity   | String   | 连通性       |      |
-| org_id         | String   | 组织         |      |
-| org_name       | String   | 组织名称     |      |
-| has_secret     | Boolean  | 是否有密码   |      |
-| privileged     | Boolean  | 是否有特权账号 |    |
-| is_active      | Boolean  | 激活         |      |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，id |  |
+| name | 类型：String，名称 |  |
+| username | 类型：String，用户名 |  |
+| secret_type | 类型：String，密码类型 |  |
+| created_by | 类型：String，创建者 |  |
+| comment | 类型：String，备注 |  |
+| su_from | 类型：String，sudo用户 |  |
+| asset | 类型：String，资产薪资 |  |
+| source | 类型：String，来源 |  |
+| connectivity | 类型：String，连通性 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
+| has_secret | 类型：Boolean，是否有密码 |  |
+| privileged | 类型：Boolean，是否有特权账号 |  |
+| is_active | 类型：Boolean，激活 |  |
 
 **请求示例**
 

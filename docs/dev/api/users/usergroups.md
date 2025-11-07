@@ -23,17 +23,17 @@
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称 | 数据类型 | 字段描述 | 备注 |
-| -------- | -------- | -------- | ---- |
-| id | String | 用户组id |  |
-| name | String | 用户组名称 |  |
-| comment | String | 备注 |  |
-| created_by | String | 创建者 |  |
-| users | String[] | 用户 |  |
-| users_amount | String | 用户数量 |  |
-| org_id | String | 组织 |  |
-| org_name | String | 组织名称 |  |
-| date_created | String | 创建时间 |  |
+| 字段名称 | 字段描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：String，用户组id |  |
+| name | 类型：String，用户组名称 |  |
+| comment | 类型：String，备注 |  |
+| created_by | 类型：String，创建者 |  |
+| users | 类型：String[]，用户 |  |
+| users_amount | 类型：String，用户数量 |  |
+| org_id | 类型：String，组织 |  |
+| org_name | 类型：String，组织名称 |  |
+| date_created | 类型：String，创建时间 |  |
 
 - **请求示例**
 

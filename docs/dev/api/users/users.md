@@ -15,44 +15,44 @@
 
 - **返回参数：**
 
-| 字段名称 | 类型 | 描述 | 备注 |
-| -------- | ---- | ---- | ---- |
-| count | int | 总数 | 分页总记录数 |
-| next | string | 下一页链接 | 无更多页为 null |
-| previous | string | 上一页链接 | 无上一页为 null |
-| results | list | 用户数据列表 | 列表元素为用户对象(见下) |
-| id | string | 用户ID | UUID |
-| name | string | 显示名称 |  |
-| username | string | 用户名 | 登录名 |
-| email | string | 邮箱 |  |
-| mfa_level | object | MFA 等级 | {"value":0,"label":"禁用"} 等 |
-| source | object | 用户来源 | local/ldap/openid/radius/cas/saml2/oauth2/custom |
-| wecom_id | string | 企业微信ID | 绑定时存在 |
-| dingtalk_id | string | 钉钉ID | 绑定时存在 |
-| feishu_id | string | 飞书ID | 绑定时存在 |
-| created_by | string | 创建者 |  |
-| updated_by | string | 更新者 |  |
-| comment | string | 备注 |  |
-| groups | list | 用户组 | 对象或ID列表 |
-| system_roles | list | 系统角色 | 默认含“用户”角色 |
-| org_roles | list | 组织角色 | 默认含“组织用户” |
-| password_strategy | list | 密码策略 | email / custom 等 |
-| is_service_account | boolean | 是否组件账号 | true表示系统内部账号 |
-| is_valid | boolean | 是否有效 |  |
-| is_expired | boolean | 是否到期 |  |
-| is_active | boolean | 是否启用 |  |
-| is_otp_secret_key_bound | boolean | 是否绑定OTP密钥 |  |
-| can_public_key_auth | boolean | 是否允许SSH公钥 |  |
-| mfa_enabled | boolean | 是否开启MFA |  |
-| need_update_password | boolean | 下次登录需改密 |  |
-| mfa_force_enabled | boolean | 是否强制MFA |  |
-| is_first_login | boolean | 是否第一次登录 |  |
-| login_blocked | boolean | 登录阻止 |  |
-| date_expired | string(date-time) | 过期时间 |  |
-| date_joined | string(date-time) | 加入时间 |  |
-| last_login | string(date-time) | 最后登录时间 |  |
-| date_updated | string(date-time) | 更新时间 |  |
-| date_password_last_updated | string(date-time) | 密码更新时间 |  |
+| 字段名称 | 描述 | 备注 |
+| --- | --- | --- |
+| count | 类型：int，总数 | 分页总记录数 |
+| next | 类型：string，下一页链接 | 无更多页为 null |
+| previous | 类型：string，上一页链接 | 无上一页为 null |
+| results | 类型：list，用户数据列表 | 列表元素为用户对象(见下) |
+| id | 类型：string，用户ID | UUID |
+| name | 类型：string，显示名称 |  |
+| username | 类型：string，用户名 | 登录名 |
+| email | 类型：string，邮箱 |  |
+| mfa_level | 类型：object，MFA 等级 | {"value":0,"label":"禁用"} 等 |
+| source | 类型：object，用户来源 | local/ldap/openid/radius/cas/saml2/oauth2/custom |
+| wecom_id | 类型：string，企业微信ID | 绑定时存在 |
+| dingtalk_id | 类型：string，钉钉ID | 绑定时存在 |
+| feishu_id | 类型：string，飞书ID | 绑定时存在 |
+| created_by | 类型：string，创建者 |  |
+| updated_by | 类型：string，更新者 |  |
+| comment | 类型：string，备注 |  |
+| groups | 类型：list，用户组 | 对象或ID列表 |
+| system_roles | 类型：list，系统角色 | 默认含“用户”角色 |
+| org_roles | 类型：list，组织角色 | 默认含“组织用户” |
+| password_strategy | 类型：list，密码策略 | email / custom 等 |
+| is_service_account | 类型：boolean，是否组件账号 | true表示系统内部账号 |
+| is_valid | 类型：boolean，是否有效 |  |
+| is_expired | 类型：boolean，是否到期 |  |
+| is_active | 类型：boolean，是否启用 |  |
+| is_otp_secret_key_bound | 类型：boolean，是否绑定OTP密钥 |  |
+| can_public_key_auth | 类型：boolean，是否允许SSH公钥 |  |
+| mfa_enabled | 类型：boolean，是否开启MFA |  |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| mfa_force_enabled | 类型：boolean，是否强制MFA |  |
+| is_first_login | 类型：boolean，是否第一次登录 |  |
+| login_blocked | 类型：boolean，登录阻止 |  |
+| date_expired | 类型：string(date-time)，过期时间 |  |
+| date_joined | 类型：string(date-time)，加入时间 |  |
+| last_login | 类型：string(date-time)，最后登录时间 |  |
+| date_updated | 类型：string(date-time)，更新时间 |  |
+| date_password_last_updated | 类型：string(date-time)，密码更新时间 |  |
 
 - **请求示例**
 
@@ -145,42 +145,42 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数：** （创建成功返回完整用户对象，与 GET 列表中单个元素结构一致）
 
-| 字段名称 | 类型 | 描述 | 备注 |
-| -------- | ---- | ---- | ---- |
-| id | string | 用户ID | UUID |
-| name | string | 堡垒机用户名称 |  |
-| username | string | 堡垒机用户名 | 登录名 |
-| email | string | 邮箱 |  |
-| wechat | string | 微信 |  |
-| phone | string | 电话号码 |  |
-| mfa_level | object | MFA 等级 | {"value":0,"label":"禁用"} 等 |
-| source | object | 用户来源 | local/ldap/.../custom |
-| wecom_id | string | 企业微信ID | 绑定时存在 |
-| dingtalk_id | string | 钉钉ID | 绑定时存在 |
-| feishu_id | string | 飞书ID | 绑定时存在 |
-| created_by | string | 创建者 |  |
-| updated_by | string | 更新者 |  |
-| comment | string | 备注 |  |
-| groups | list | 用户组 | 对象或ID列表 |
-| system_roles | list | 系统角色 | 默认含“用户”角色 |
-| org_roles | list | 组织角色 | 默认含“组织用户” |
-| password_strategy | string | 密码策略 | email / custom |
-| is_service_account | boolean | 是否组件账号 | true 表示系统内部账号 |
-| is_valid | boolean | 是否有效 |  |
-| is_expired | boolean | 是否到期 |  |
-| is_active | boolean | 是否启用 |  |
-| is_otp_secret_key_bound | boolean | 是否绑定OTP密钥 |  |
-| can_public_key_auth | boolean | 是否允许SSH公钥 |  |
-| mfa_enabled | boolean | 是否开启MFA |  |
-| need_update_password | boolean | 下次登录需改密 |  |
-| mfa_force_enabled | boolean | 是否强制MFA |  |
-| is_first_login | boolean | 是否第一次登录 |  |
-| login_blocked | boolean | 登录阻止 |  |
-| date_expired | string(date-time) | 过期时间 |  |
-| date_joined | string(date-time) | 加入时间 |  |
-| last_login | string(date-time) | 最后登录时间 |  |
-| date_updated | string(date-time) | 更新时间 |  |
-| date_password_last_updated | string(date-time) | 密码更新时间 |  |
+| 字段名称 | 描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：string，用户ID | UUID |
+| name | 类型：string，堡垒机用户名称 |  |
+| username | 类型：string，堡垒机用户名 | 登录名 |
+| email | 类型：string，邮箱 |  |
+| wechat | 类型：string，微信 |  |
+| phone | 类型：string，电话号码 |  |
+| mfa_level | 类型：object，MFA 等级 | {"value":0,"label":"禁用"} 等 |
+| source | 类型：object，用户来源 | local/ldap/.../custom |
+| wecom_id | 类型：string，企业微信ID | 绑定时存在 |
+| dingtalk_id | 类型：string，钉钉ID | 绑定时存在 |
+| feishu_id | 类型：string，飞书ID | 绑定时存在 |
+| created_by | 类型：string，创建者 |  |
+| updated_by | 类型：string，更新者 |  |
+| comment | 类型：string，备注 |  |
+| groups | 类型：list，用户组 | 对象或ID列表 |
+| system_roles | 类型：list，系统角色 | 默认含“用户”角色 |
+| org_roles | 类型：list，组织角色 | 默认含“组织用户” |
+| password_strategy | 类型：string，密码策略 | email / custom |
+| is_service_account | 类型：boolean，是否组件账号 | true 表示系统内部账号 |
+| is_valid | 类型：boolean，是否有效 |  |
+| is_expired | 类型：boolean，是否到期 |  |
+| is_active | 类型：boolean，是否启用 |  |
+| is_otp_secret_key_bound | 类型：boolean，是否绑定OTP密钥 |  |
+| can_public_key_auth | 类型：boolean，是否允许SSH公钥 |  |
+| mfa_enabled | 类型：boolean，是否开启MFA |  |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| mfa_force_enabled | 类型：boolean，是否强制MFA |  |
+| is_first_login | 类型：boolean，是否第一次登录 |  |
+| login_blocked | 类型：boolean，登录阻止 |  |
+| date_expired | 类型：string(date-time)，过期时间 |  |
+| date_joined | 类型：string(date-time)，加入时间 |  |
+| last_login | 类型：string(date-time)，最后登录时间 |  |
+| date_updated | 类型：string(date-time)，更新时间 |  |
+| date_password_last_updated | 类型：string(date-time)，密码更新时间 |  |
 
 - **请求示例**
 
@@ -287,42 +287,42 @@ if __name__ == "__main__":
 
 - **返回参数：**（结构与创建/列表单个元素一致）
 
-| 字段名称 | 类型 | 描述 | 备注 |
-| -------- | ---- | ---- | ---- |
-| id | string | 用户ID | UUID |
-| name | string | 堡垒机用户名称 |  |
-| username | string | 堡垒机用户名 | 登录名 |
-| email | string | 邮箱 |  |
-| wechat | string | 微信 |  |
-| phone | string | 电话号码 |  |
-| mfa_level | object | MFA 等级 | {"value":0,"label":"禁用"} 等 |
-| source | object | 用户来源 | local/ldap/.../custom |
-| wecom_id | string | 企业微信ID | 绑定时存在 |
-| dingtalk_id | string | 钉钉ID | 绑定时存在 |
-| feishu_id | string | 飞书ID | 绑定时存在 |
-| created_by | string | 创建者 |  |
-| updated_by | string | 更新者 |  |
-| comment | string | 备注 |  |
-| groups | list | 用户组 | 对象或ID列表 |
-| system_roles | list | 系统角色 | 默认含“用户”角色 |
-| org_roles | list | 组织角色 | 默认含“组织用户” |
-| password_strategy | string | 密码策略 | email / custom |
-| is_service_account | boolean | 是否组件账号 |  |
-| is_valid | boolean | 是否有效 |  |
-| is_expired | boolean | 是否到期 |  |
-| is_active | boolean | 是否启用 |  |
-| is_otp_secret_key_bound | boolean | 是否绑定OTP密钥 |  |
-| can_public_key_auth | boolean | 是否允许SSH公钥 |  |
-| mfa_enabled | boolean | 是否开启MFA |  |
-| need_update_password | boolean | 下次登录需改密 |  |
-| mfa_force_enabled | boolean | 是否强制MFA |  |
-| is_first_login | boolean | 是否第一次登录 |  |
-| login_blocked | boolean | 登录阻止 |  |
-| date_expired | string(date-time) | 过期时间 |  |
-| date_joined | string(date-time) | 加入时间 |  |
-| last_login | string(date-time) | 最后登录时间 |  |
-| date_updated | string(date-time) | 更新时间 |  |
-| date_password_last_updated | string(date-time) | 密码更新时间 |  |
+| 字段名称 | 描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：string，用户ID | UUID |
+| name | 类型：string，堡垒机用户名称 |  |
+| username | 类型：string，堡垒机用户名 | 登录名 |
+| email | 类型：string，邮箱 |  |
+| wechat | 类型：string，微信 |  |
+| phone | 类型：string，电话号码 |  |
+| mfa_level | 类型：object，MFA 等级 | {"value":0,"label":"禁用"} 等 |
+| source | 类型：object，用户来源 | local/ldap/.../custom |
+| wecom_id | 类型：string，企业微信ID | 绑定时存在 |
+| dingtalk_id | 类型：string，钉钉ID | 绑定时存在 |
+| feishu_id | 类型：string，飞书ID | 绑定时存在 |
+| created_by | 类型：string，创建者 |  |
+| updated_by | 类型：string，更新者 |  |
+| comment | 类型：string，备注 |  |
+| groups | 类型：list，用户组 | 对象或ID列表 |
+| system_roles | 类型：list，系统角色 | 默认含“用户”角色 |
+| org_roles | 类型：list，组织角色 | 默认含“组织用户” |
+| password_strategy | 类型：string，密码策略 | email / custom |
+| is_service_account | 类型：boolean，是否组件账号 |  |
+| is_valid | 类型：boolean，是否有效 |  |
+| is_expired | 类型：boolean，是否到期 |  |
+| is_active | 类型：boolean，是否启用 |  |
+| is_otp_secret_key_bound | 类型：boolean，是否绑定OTP密钥 |  |
+| can_public_key_auth | 类型：boolean，是否允许SSH公钥 |  |
+| mfa_enabled | 类型：boolean，是否开启MFA |  |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| mfa_force_enabled | 类型：boolean，是否强制MFA |  |
+| is_first_login | 类型：boolean，是否第一次登录 |  |
+| login_blocked | 类型：boolean，登录阻止 |  |
+| date_expired | 类型：string(date-time)，过期时间 |  |
+| date_joined | 类型：string(date-time)，加入时间 |  |
+| last_login | 类型：string(date-time)，最后登录时间 |  |
+| date_updated | 类型：string(date-time)，更新时间 |  |
+| date_password_last_updated | 类型：string(date-time)，密码更新时间 |  |
 
 - **请求示例**
 
@@ -420,42 +420,42 @@ if __name__ == "__main__":
 > 注：带 * 的参数为必填项。
 - **返回参数：**
 
-| 字段名称 | 类型 | 描述 | 备注 |
-| -------- | ---- | ---- | ---- |
-| id | string | 用户ID | UUID |
-| name | string | 堡垒机用户名称 |  |
-| username | string | 堡垒机用户名 | 登录名 |
-| email | string | 邮箱 |  |
-| wechat | string | 微信 |  |
-| phone | string | 电话号码 |  |
-| mfa_level | object | MFA 等级 | {"value":0,"label":"禁用"} 等 |
-| source | object | 用户来源 | local/ldap/.../custom |
-| wecom_id | string | 企业微信ID | 绑定时存在 |
-| dingtalk_id | string | 钉钉ID | 绑定时存在 |
-| feishu_id | string | 飞书ID | 绑定时存在 |
-| created_by | string | 创建者 |  |
-| updated_by | string | 更新者 |  |
-| comment | string | 备注 |  |
-| groups | list | 用户组 | 对象或ID列表 |
-| system_roles | list | 系统角色 | 默认含“用户”角色 |
-| org_roles | list | 组织角色 | 默认含“组织用户” |
-| password_strategy | string | 密码策略 | email / custom |
-| is_service_account | boolean | 是否组件账号 |  |
-| is_valid | boolean | 是否有效 |  |
-| is_expired | boolean | 是否到期 |  |
-| is_active | boolean | 是否启用 |  |
-| is_otp_secret_key_bound | boolean | 是否绑定OTP密钥 |  |
-| can_public_key_auth | boolean | 是否允许SSH公钥 |  |
-| mfa_enabled | boolean | 是否开启MFA |  |
-| need_update_password | boolean | 下次登录需改密 |  |
-| mfa_force_enabled | boolean | 是否强制MFA |  |
-| is_first_login | boolean | 是否第一次登录 |  |
-| login_blocked | boolean | 登录阻止 |  |
-| date_expired | string(date-time) | 过期时间 |  |
-| date_joined | string(date-time) | 加入时间 |  |
-| last_login | string(date-time) | 最后登录时间 |  |
-| date_updated | string(date-time) | 更新时间 |  |
-| date_password_last_updated | string(date-time) | 密码更新时间 |  |
+| 字段名称 | 描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：string，用户ID | UUID |
+| name | 类型：string，堡垒机用户名称 |  |
+| username | 类型：string，堡垒机用户名 | 登录名 |
+| email | 类型：string，邮箱 |  |
+| wechat | 类型：string，微信 |  |
+| phone | 类型：string，电话号码 |  |
+| mfa_level | 类型：object，MFA 等级 | {"value":0,"label":"禁用"} 等 |
+| source | 类型：object，用户来源 | local/ldap/.../custom |
+| wecom_id | 类型：string，企业微信ID | 绑定时存在 |
+| dingtalk_id | 类型：string，钉钉ID | 绑定时存在 |
+| feishu_id | 类型：string，飞书ID | 绑定时存在 |
+| created_by | 类型：string，创建者 |  |
+| updated_by | 类型：string，更新者 |  |
+| comment | 类型：string，备注 |  |
+| groups | 类型：list，用户组 | 对象或ID列表 |
+| system_roles | 类型：list，系统角色 | 默认含“用户”角色 |
+| org_roles | 类型：list，组织角色 | 默认含“组织用户” |
+| password_strategy | 类型：string，密码策略 | email / custom |
+| is_service_account | 类型：boolean，是否组件账号 |  |
+| is_valid | 类型：boolean，是否有效 |  |
+| is_expired | 类型：boolean，是否到期 |  |
+| is_active | 类型：boolean，是否启用 |  |
+| is_otp_secret_key_bound | 类型：boolean，是否绑定OTP密钥 |  |
+| can_public_key_auth | 类型：boolean，是否允许SSH公钥 |  |
+| mfa_enabled | 类型：boolean，是否开启MFA |  |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| mfa_force_enabled | 类型：boolean，是否强制MFA |  |
+| is_first_login | 类型：boolean，是否第一次登录 |  |
+| login_blocked | 类型：boolean，登录阻止 |  |
+| date_expired | 类型：string(date-time)，过期时间 |  |
+| date_joined | 类型：string(date-time)，加入时间 |  |
+| last_login | 类型：string(date-time)，最后登录时间 |  |
+| date_updated | 类型：string(date-time)，更新时间 |  |
+| date_password_last_updated | 类型：string(date-time)，密码更新时间 |  |
 
 - **请求示例**
 
@@ -580,42 +580,42 @@ if __name__ == "__main__":
 
 - **返回参数：**
 
-| 字段名称 | 类型 | 描述 | 备注 |
-| -------- | ---- | ---- | ---- |
-| id | string | 用户ID | UUID |
-| name | string | 堡垒机用户名称 |  |
-| username | string | 堡垒机用户名 | 登录名 |
-| email | string | 邮箱 |  |
-| wechat | string | 微信 |  |
-| phone | string | 电话号码 |  |
-| mfa_level | object | MFA 等级 | {"value":0,"label":"禁用"} 等 |
-| source | object | 用户来源 | local/ldap/.../custom |
-| wecom_id | string | 企业微信ID | 绑定时存在 |
-| dingtalk_id | string | 钉钉ID | 绑定时存在 |
-| feishu_id | string | 飞书ID | 绑定时存在 |
-| created_by | string | 创建者 |  |
-| updated_by | string | 更新者 |  |
-| comment | string | 备注 |  |
-| groups | list | 用户组 | 对象或ID列表 |
-| system_roles | list | 系统角色 | 默认含“用户”角色 |
-| org_roles | list | 组织角色 | 默认含“组织用户” |
-| password_strategy | string | 密码策略 | email / custom |
-| is_service_account | boolean | 是否组件账号 |  |
-| is_valid | boolean | 是否有效 |  |
-| is_expired | boolean | 是否到期 |  |
-| is_active | boolean | 是否启用 |  |
-| is_otp_secret_key_bound | boolean | 是否绑定OTP密钥 |  |
-| can_public_key_auth | boolean | 是否允许SSH公钥 |  |
-| mfa_enabled | boolean | 是否开启MFA |  |
-| need_update_password | boolean | 下次登录需改密 |  |
-| mfa_force_enabled | boolean | 是否强制MFA |  |
-| is_first_login | boolean | 是否第一次登录 |  |
-| login_blocked | boolean | 登录阻止 |  |
-| date_expired | string(date-time) | 过期时间 |  |
-| date_joined | string(date-time) | 加入时间 |  |
-| last_login | string(date-time) | 最后登录时间 |  |
-| date_updated | string(date-time) | 更新时间 |  |
-| date_password_last_updated | string(date-time) | 密码更新时间 |  |
+| 字段名称 | 描述 | 备注 |
+| --- | --- | --- |
+| id | 类型：string，用户ID | UUID |
+| name | 类型：string，堡垒机用户名称 |  |
+| username | 类型：string，堡垒机用户名 | 登录名 |
+| email | 类型：string，邮箱 |  |
+| wechat | 类型：string，微信 |  |
+| phone | 类型：string，电话号码 |  |
+| mfa_level | 类型：object，MFA 等级 | {"value":0,"label":"禁用"} 等 |
+| source | 类型：object，用户来源 | local/ldap/.../custom |
+| wecom_id | 类型：string，企业微信ID | 绑定时存在 |
+| dingtalk_id | 类型：string，钉钉ID | 绑定时存在 |
+| feishu_id | 类型：string，飞书ID | 绑定时存在 |
+| created_by | 类型：string，创建者 |  |
+| updated_by | 类型：string，更新者 |  |
+| comment | 类型：string，备注 |  |
+| groups | 类型：list，用户组 | 对象或ID列表 |
+| system_roles | 类型：list，系统角色 | 默认含“用户”角色 |
+| org_roles | 类型：list，组织角色 | 默认含“组织用户” |
+| password_strategy | 类型：string，密码策略 | email / custom |
+| is_service_account | 类型：boolean，是否组件账号 |  |
+| is_valid | 类型：boolean，是否有效 |  |
+| is_expired | 类型：boolean，是否到期 |  |
+| is_active | 类型：boolean，是否启用 |  |
+| is_otp_secret_key_bound | 类型：boolean，是否绑定OTP密钥 |  |
+| can_public_key_auth | 类型：boolean，是否允许SSH公钥 |  |
+| mfa_enabled | 类型：boolean，是否开启MFA |  |
+| need_update_password | 类型：boolean，下次登录需改密 |  |
+| mfa_force_enabled | 类型：boolean，是否强制MFA |  |
+| is_first_login | 类型：boolean，是否第一次登录 |  |
+| login_blocked | 类型：boolean，登录阻止 |  |
+| date_expired | 类型：string(date-time)，过期时间 |  |
+| date_joined | 类型：string(date-time)，加入时间 |  |
+| last_login | 类型：string(date-time)，最后登录时间 |  |
+| date_updated | 类型：string(date-time)，更新时间 |  |
+| date_password_last_updated | 类型：string(date-time)，密码更新时间 |  |
 
 - **请求示例**
 
