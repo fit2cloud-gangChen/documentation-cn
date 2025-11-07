@@ -52,6 +52,8 @@ nav:
     - assets: dev/api/assets/assets.md
     - nodes: dev/api/assets/nodes.md
     - authorization: dev/api/assets/authorization.md
+  - 授权:
+    - asset-permissions: dev/api/perms/authorization.md
   - 账号:
     - accounts: dev/api/accounts/accounts.md
     - accountsecrets: dev/api/accounts/accountsecrets.md
