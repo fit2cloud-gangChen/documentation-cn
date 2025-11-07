@@ -45,22 +45,22 @@ nav:
     - Token: dev/api/auth/token.md
     - Private Token: dev/api/auth/private_token.md
     - Access Key: dev/api/auth/access_key.md
-  - users:
+  - 用户:
     - users: dev/api/users/users.md
     - groups: dev/api/users/usergroups.md
-  - assets:
+  - 资产:
     - assets: dev/api/assets/assets.md
     - nodes: dev/api/assets/nodes.md
     - authorization: dev/api/assets/authorization.md
-  - accounts:
+  - 账号:
     - accounts: dev/api/accounts/accounts.md
     - accountsecrets: dev/api/accounts/accountsecrets.md
     - account_backup: dev/api/accounts/account_backup.md
     - change-secret-automations: dev/api/accounts/changepwd.md
     - account-backup-plans: dev/api/accounts/account_backup.md
-  - ticket: dev/api/ticket/ticket.md
-  - health: dev/api/health/health.md
-  - terminal:
+  - 工单: dev/api/ticket/ticket.md
+  - 健康检查: dev/api/health/health.md
+  - 终端:
     - metrics: dev/api/terminal/metrics.md
 
 markdown_extensions:
