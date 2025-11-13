@@ -37,8 +37,8 @@ theme:
     repo: fontawesome/brands/github
 
 nav:
-  - 免责声明: dev/api/disclaimer.md
-  - 前言: dev/api/prologue_ops.md
+  - 免责声明: manual/disclaimer.md
+  - 前言: manual/prologue_ops.md
   - 系统架构说明: manual/maintenance/system_architecture.md
   - 服务端口说明: manual/maintenance/service_port.md
   - 日常基本操作: manual/maintenance/daily_operations.md
