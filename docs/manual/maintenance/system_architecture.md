@@ -5,8 +5,6 @@
 JumpServer 堡垒机采用微服务架构设计。JumpServer 服务由 Docker 承载，不同的功能模块在不同的容器上面运行；通过 Docker-Compose 以及 jmsctl 管理脚本编排整个 JumpServer 服务的运行与维持不同功能模块之间的依赖关系。
 
 !!! tips ""
-    社区版安装包格式：`jumpserver-ce-{{ jumpserver.tag }}-x86_64.tar`  [jumpserver-ce-系统版本-系统架构]
-
     企业版安装包格式：`jumpserver-ee-{{ jumpserver.tag }}-x86_64.tar`  [jumpserver-ee-系统版本-系统架构]
 
 ## 2 依赖组件
@@ -22,12 +20,12 @@ JumpServer 堡垒机依赖组件如下：
 | jms_lion | 该组件是 JumpServer 的资产连接组件，通过浏览器 Web 终端连接 Windows 资产。 |
 | jms_chen | 该组件是 JumpServer 的资产连接组件，通过浏览器 Web 终端连接数据库。 |
 | jms_magnus | 该组件是 JumpServer 的资产连接组件，通过数据库代理的方式支持用户通过原生的客户端（例如:Navicat、DBeaver 等）对数据库进行直连操作（X-PACK）。 |
-| jms_razor | 该组件是 JumpServer 的资产连接组件，通过 JumpServer 客户端的方式拉起个人 PC 原生的远程连接工具 MSTSC，访问 Windows 资产（X-PACK）。 |
-| jms_xrdp | 该组件是 JumpServer 的资产连接组件，支持对 Windows 2003 版本的资产进行连接，审计（X-PACK）。 |
-| jms_facelive | 该组件是 JumpServer 支持通过人脸识别进行 MFA 认证的组件（X-PACK）。 |
-| jms_panda | 该组件是 JumpServer 的 Linux 远程应用发布机的支持组件（X-PACK）。 |
-| jms_video | 该组件是 JumpServer 的录像转换 MP4 组件（X-PACK）。 |
-| jms_nec | 该组件是服务于客户端方式连接 VNC 协议资产的组件（X-PACK）。 |
+| jms_razor | 该组件是 JumpServer 的资产连接组件，通过 JumpServer 客户端的方式拉起个人 PC 原生的远程连接工具 MSTSC，访问 Windows 资产。 |
+| jms_xrdp | 该组件是 JumpServer 的资产连接组件，支持对 Windows 2003 版本的资产进行连接，审计。 |
+| jms_facelive | 该组件是 JumpServer 支持通过人脸识别进行 MFA 认证的组件。 |
+| jms_panda | 该组件是 JumpServer 的 Linux 远程应用发布机的支持组件。 |
+| jms_video | 该组件是 JumpServer 的录像转换 MP4 组件。 |
+| jms_nec | 该组件是服务于客户端方式连接 VNC 协议资产的组件。 |
 | PostgreSQL | 提供数据库服务，存储 JumpServer 核心信息。如果无法提供外置 PostgreSQL，JumpServer 自动运行容器 jms_postgresql。 |
 | Redis | 提供数据库信息缓存服务。如果无法提供外置 Redis，JumpServer 自动运行容器 jms_redis。 |
 

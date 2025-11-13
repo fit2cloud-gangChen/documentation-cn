@@ -30,7 +30,7 @@ JumpServer 的核心日志存放在 `/data/jumpserver/core/data/logs`。
 | Celery | `/data/jumpserver/celery/data/logs` |
 | Lion | `/data/jumpserver/lion/data/logs` |
 | Koko | `/data/jumpserver/koko/data/logs` |
-| Razor | `/data/jumpserver/razor/data/logs` |
+| Razor| `/data/jumpserver/razor/data/logs` |
 | Xrdp | `/data/jumpserver/xrdp/data/logs` |
 | Chen | `/data/jumpserver/chen/data/logs` |
 | Magnus | `/data/jumpserver/magnus/data/logs` |

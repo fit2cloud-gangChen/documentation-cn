@@ -156,7 +156,6 @@ JumpServer 默认的安装脚本位于 `<安装包解压路径>/jmsctl.sh`。同
     MAGNUS_POSTGRESQL_PORT=54320  # JumpServer使用Magnus组件连接PostgreSQL数据库时使用的端口
     MAGNUS_SQLSERVER_PORT=14330   # JumpServer使用Magnus组件连接SQL Server数据库时使用的端口
     MAGNUS_ORACLE_PORT=15210   # JumpServer使用Magnus组件连接Oracle数据库时使用的端口
-
     XRDP_ENABLED=0
 
     ################################## 其他配置 ##################################
